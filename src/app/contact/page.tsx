@@ -51,13 +51,23 @@ export default function ContactPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner */}
-      <section className="bg-navy pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
-        <div className="hero-arc w-[400px] h-[400px] -top-40 -right-40 opacity-10" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
+      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+        {/* Brand Pattern Background */}
+        <svg
+          className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
+          viewBox="0 0 400 400"
+          fill="none"
+        >
+          <circle cx="400" cy="0" r="100" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="0" r="200" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="0" r="300" stroke="white" strokeWidth="1" />
+        </svg>
+
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
             Get In Touch
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading">
             Contact Us
           </h1>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -68,21 +78,21 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <ScrollReveal variant="left">
                 {submitted ? (
-                  <div className="bg-slate rounded-2xl p-10 text-center">
-                    <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="text-green-500" size={32} />
+                  <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-10 text-center shadow-xs">
+                    <div className="w-16 h-16 rounded-full bg-status-success-bg flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="text-status-success" size={32} strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-navy font-semibold text-2xl mb-2">
+                    <h3 className="text-navy-900 font-extrabold text-2xl mb-2 font-heading">
                       Message Sent!
                     </h3>
-                    <p className="text-warm-grey text-base">
+                    <p className="text-gray-600 text-base">
                       Thank you for reaching out. We&apos;ll get back to you within
                       1-2 business days.
                     </p>
@@ -96,20 +106,20 @@ export default function ContactPage() {
                           message: "",
                         });
                       }}
-                      className="mt-6 bg-navy hover:bg-navy-light text-white"
+                      className="mt-6 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded-[6px]"
                     >
                       Send Another Message
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <h2 className="heading-section text-2xl text-navy mb-6">
+                    <h2 className="heading-section text-2xl text-gray-900 font-extrabold mb-6 font-heading">
                       Send Us a Message
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name" className="text-charcoal mb-2 block text-sm font-medium">
+                        <Label htmlFor="name" className="text-gray-900 mb-2 block text-sm font-semibold">
                           Full Name *
                         </Label>
                         <Input
@@ -118,19 +128,19 @@ export default function ContactPage() {
                           value={formState.name}
                           onChange={handleChange}
                           placeholder="Your full name"
-                          className={`bg-slate border-gray-200 focus:border-gold focus:ring-gold ${
+                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
                             errors.name ? "border-red-400" : ""
                           }`}
                         />
                         {errors.name && (
-                          <p className="text-red-500 text-xs mt-1">
+                          <p className="text-status-error text-xs mt-1">
                             {errors.name}
                           </p>
                         )}
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="text-charcoal mb-2 block text-sm font-medium">
+                        <Label htmlFor="email" className="text-gray-900 mb-2 block text-sm font-semibold">
                           Email Address *
                         </Label>
                         <Input
@@ -140,12 +150,12 @@ export default function ContactPage() {
                           value={formState.email}
                           onChange={handleChange}
                           placeholder="your@email.com"
-                          className={`bg-slate border-gray-200 focus:border-gold focus:ring-gold ${
+                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
                             errors.email ? "border-red-400" : ""
                           }`}
                         />
                         {errors.email && (
-                          <p className="text-red-500 text-xs mt-1">
+                          <p className="text-status-error text-xs mt-1">
                             {errors.email}
                           </p>
                         )}
@@ -153,7 +163,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="subject" className="text-charcoal mb-2 block text-sm font-medium">
+                      <Label htmlFor="subject" className="text-gray-900 mb-2 block text-sm font-semibold">
                         Subject *
                       </Label>
                       <Input
@@ -162,19 +172,19 @@ export default function ContactPage() {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="How can we help?"
-                        className={`bg-slate border-gray-200 focus:border-gold focus:ring-gold ${
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
                           errors.subject ? "border-red-400" : ""
                         }`}
                       />
                       {errors.subject && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-status-error text-xs mt-1">
                           {errors.subject}
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-charcoal mb-2 block text-sm font-medium">
+                      <Label htmlFor="message" className="text-gray-900 mb-2 block text-sm font-semibold">
                         Message *
                       </Label>
                       <Textarea
@@ -184,12 +194,12 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="Tell us about your project or inquiry..."
                         rows={6}
-                        className={`bg-slate border-gray-200 focus:border-gold focus:ring-gold resize-none ${
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] resize-none ${
                           errors.message ? "border-red-400" : ""
                         }`}
                       />
                       {errors.message && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-status-error text-xs mt-1">
                           {errors.message}
                         </p>
                       )}
@@ -198,9 +208,9 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full sm:w-auto bg-gradient-to-r from-gold to-gold-light text-navy font-semibold hover:from-gold-light hover:to-gold shadow-lg shadow-gold/20 px-10"
+                      className="w-full sm:w-auto bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm rounded-[6px] shadow-sm transition-colors duration-180 px-10"
                     >
-                      <Send className="mr-2" size={18} />
+                      <Send className="mr-2" size={18} strokeWidth={1.5} />
                       Send Message
                     </Button>
                   </form>
@@ -211,21 +221,21 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="lg:col-span-2">
               <ScrollReveal variant="right">
-                <div className="bg-navy rounded-2xl p-8 h-full">
-                  <h3 className="heading-section text-2xl text-white mb-8">
+                <div className="bg-navy-900 rounded-[10px] p-8 h-full shadow-sm">
+                  <h3 className="heading-section text-2xl text-white font-extrabold mb-8 font-heading">
                     Contact Information
                   </h3>
 
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                        <Mail className="text-gold" size={18} />
+                      <div className="w-10 h-10 rounded-[6px] bg-teal-700/20 flex items-center justify-center shrink-0 border border-teal-700/10">
+                        <Mail className="text-teal-100" size={18} strokeWidth={1.5} />
                       </div>
                       <div>
                         <p className="text-white/50 text-sm mb-1">Email</p>
                         <a
                           href={`mailto:${siteConfig.email}`}
-                          className="text-white hover:text-gold transition-colors text-sm"
+                          className="text-white hover:text-teal-100 transition-colors duration-180 text-sm font-semibold"
                         >
                           {siteConfig.email}
                         </a>
@@ -234,14 +244,14 @@ export default function ContactPage() {
 
                     {siteConfig.phones.map((phone) => (
                       <div key={phone} className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                          <Phone className="text-gold" size={18} />
+                        <div className="w-10 h-10 rounded-[6px] bg-teal-700/20 flex items-center justify-center shrink-0 border border-teal-700/10">
+                          <Phone className="text-teal-100" size={18} strokeWidth={1.5} />
                         </div>
                         <div>
                           <p className="text-white/50 text-sm mb-1">Phone</p>
                           <a
                             href={`tel:${phone}`}
-                            className="text-white hover:text-gold transition-colors text-sm"
+                            className="text-white hover:text-teal-100 transition-colors duration-180 text-sm font-semibold"
                           >
                             {phone}
                           </a>
@@ -250,12 +260,12 @@ export default function ContactPage() {
                     ))}
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                        <MapPin className="text-gold" size={18} />
+                      <div className="w-10 h-10 rounded-[6px] bg-teal-700/20 flex items-center justify-center shrink-0 border border-teal-700/10">
+                        <MapPin className="text-teal-100" size={18} strokeWidth={1.5} />
                       </div>
                       <div>
                         <p className="text-white/50 text-sm mb-1">Office</p>
-                        <p className="text-white text-sm leading-relaxed">
+                        <p className="text-white text-sm leading-relaxed font-semibold">
                           {siteConfig.address}
                         </p>
                       </div>
@@ -263,18 +273,18 @@ export default function ContactPage() {
                   </div>
 
                   {/* Office Hours */}
-                  <div className="mt-10 pt-8 border-t border-white/10">
-                    <h4 className="text-white font-semibold text-base mb-4">
+                  <div className="mt-10 pt-8 border-t border-white/5">
+                    <h4 className="text-white font-extrabold text-base mb-4 font-heading">
                       Office Hours
                     </h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-white/50">Sunday – Thursday</span>
-                        <span className="text-white">9:00 AM – 6:00 PM</span>
+                        <span className="text-white font-semibold">9:00 AM – 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-white/50">Friday – Saturday</span>
-                        <span className="text-white/40">Closed</span>
+                        <span className="text-white/40 font-semibold">Closed</span>
                       </div>
                     </div>
                   </div>

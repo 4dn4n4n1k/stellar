@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,7 +10,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const manrope = Manrope({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
@@ -46,13 +45,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <ScrollToTop />
       </body>
     </html>
   );

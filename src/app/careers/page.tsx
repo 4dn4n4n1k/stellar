@@ -15,13 +15,23 @@ export default function CareersPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner */}
-      <section className="bg-navy pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
-        <div className="hero-arc w-[400px] h-[400px] -top-40 -left-40 opacity-10" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
+      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+        {/* Brand Pattern Background */}
+        <svg
+          className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
+          viewBox="0 0 400 400"
+          fill="none"
+        >
+          <circle cx="400" cy="0" r="100" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="0" r="200" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="0" r="300" stroke="white" strokeWidth="1" />
+        </svg>
+
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
             Join Us
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading">
             Careers
           </h1>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -32,17 +42,17 @@ export default function CareersPage() {
       </section>
 
       {/* Join Our Network */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <div className="w-20 h-20 rounded-full bg-navy/5 flex items-center justify-center mx-auto mb-6">
-                <Users className="text-gold" size={36} />
+              <div className="w-16 h-16 rounded-full bg-navy-900 flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <Users className="text-teal-100" size={24} strokeWidth={1.5} />
               </div>
-              <h2 className="heading-section text-3xl md:text-4xl text-navy mb-4">
+              <h2 className="heading-section text-3xl md:text-4xl text-gray-900 font-extrabold mb-4 font-heading">
                 Join Our Expert Network
               </h2>
-              <p className="text-warm-grey text-lg leading-relaxed max-w-2xl mx-auto">
+              <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
                 Stellar Associates maintains a roster of qualified professionals
                 across multiple development sectors. We regularly engage
                 short-term and long-term consultants for research, evaluation,
@@ -70,15 +80,15 @@ export default function CareersPage() {
                 desc: "Skilled facilitators and training designers who can deliver high-quality capacity building programs.",
               },
             ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 100}>
-                <div className="bg-slate rounded-xl p-6 text-center card-hover-gold h-full">
-                  <div className="w-14 h-14 rounded-full bg-navy/5 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="text-gold" size={24} />
+              <ScrollReveal key={item.title} delay={i * 60}>
+                <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-6 text-center card-hover-teal h-full shadow-xs">
+                  <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                    <item.icon className="text-teal-100" size={22} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-navy font-semibold text-lg mb-2">
+                  <h3 className="text-navy-900 font-bold text-lg mb-2 font-heading">
                     {item.title}
                   </h3>
-                  <p className="text-warm-grey text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -89,26 +99,27 @@ export default function CareersPage() {
       </section>
 
       {/* Current Opportunities */}
-      <section className="py-20 md:py-28 bg-slate">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            kicker="Opportunities"
             title="Current Opportunities"
             subtitle="Open positions and consultancy assignments."
           />
 
           <ScrollReveal>
-            <div className="bg-white rounded-2xl p-10 text-center shadow-sm">
-              <div className="w-16 h-16 rounded-full bg-navy/5 flex items-center justify-center mx-auto mb-4">
-                <Briefcase className="text-navy/30" size={28} />
+            <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-10 text-center shadow-xs max-w-2xl mx-auto">
+              <div className="w-16 h-16 rounded-full bg-navy-900/5 flex items-center justify-center mx-auto mb-4">
+                <Briefcase className="text-navy-900/30" size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-navy font-semibold text-xl mb-2">
+              <h3 className="text-navy-900 font-bold text-xl mb-2 font-heading">
                 No Current Openings
               </h3>
-              <p className="text-warm-grey text-base mb-6">
+              <p className="text-gray-600 text-base mb-6">
                 We don&apos;t have any active vacancies at the moment, but we&apos;re always
                 looking for talented professionals to join our network.
               </p>
-              <p className="text-warm-grey text-sm">
+              <p className="text-gray-600 text-sm">
                 Please submit your CV to be considered for future opportunities.
               </p>
             </div>
@@ -117,10 +128,10 @@ export default function CareersPage() {
       </section>
 
       {/* Submit CV CTA */}
-      <section className="py-16 bg-navy">
+      <section className="py-16 bg-navy-950 border-t border-navy-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h3 className="heading-section text-2xl text-white mb-4">
+            <h3 className="heading-section text-2xl text-white font-extrabold mb-4 font-heading">
               Submit Your CV
             </h3>
             <p className="text-white/60 mb-6 max-w-xl mx-auto">
@@ -129,9 +140,9 @@ export default function CareersPage() {
             </p>
             <a
               href="mailto:stellarassociatesbd@gmail.com?subject=CV Submission — Expert Network"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-gold to-gold-light text-navy font-semibold px-8 py-3 rounded-lg hover:from-gold-light hover:to-gold shadow-lg shadow-gold/20 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-3 rounded-[6px] shadow-sm transition-colors duration-180"
             >
-              <Send size={18} />
+              <Send size={18} strokeWidth={1.5} />
               Submit CV via Email
             </a>
           </ScrollReveal>

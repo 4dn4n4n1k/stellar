@@ -24,7 +24,6 @@ Positioned at the intersection of policy, practice, and innovation, Stellar Asso
 
 Stellar is committed to being a platform for technology-savvy, gender-responsive, rights-sensitive, and environmentally conscious professionals dedicated to accelerating positive social change.`,
   stats: [
-    { value: "2026", label: "Established" },
     { value: "5", label: "Founding Partners" },
     { value: "10+", label: "Sectors Covered" },
     { value: "25+", label: "Years Combined Experience" },

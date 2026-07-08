@@ -44,71 +44,150 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Stellar Brand Colors */
-  --color-navy: #0B1D3A;
-  --color-navy-light: #12355B;
-  --color-navy-medium: #162D50;
-  --color-teal: #1F7A8C;
-  --color-teal-light: #2A9DB0;
-  --color-gold: #D4A017;
-  --color-gold-light: #E8C547;
-  --color-gold-dark: #B8860B;
-  --color-slate: #F5F7FA;
-  --color-charcoal: #1A1A2E;
-  --color-warm-grey: #6B7280;
+  /* Border Radii matching radius.html */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
+
+  /* Custom Brand Colors - Tailwind Classes Map */
+  --color-navy: #0C1B38;
+  --color-navy-50: #EEF2F8;
+  --color-navy-100: #E2E8F2;
+  --color-navy-600: #2A4877;
+  --color-navy-700: #1B3560;
+  --color-navy-800: #12264B;
+  --color-navy-900: #0C1B38;
+  --color-navy-950: #0C1B38;
+
+  --color-slate-400: #8296B1;
+  --color-slate-500: #5D7699;
+  --color-slate-600: #4A6285;
+
+  --color-teal: #0E6461;
+  --color-teal-50: #EAF3F2;
+  --color-teal-100: #D9EAE9;
+  --color-teal-700: #0E6461;
+  --color-teal-800: #0A504D;
+
+  --color-gray-25: #FCFCFD;
+  --color-gray-50: #F7F8FA;
+  --color-gray-100: #F1F3F6;
+  --color-gray-200: #E4E8EE;
+  --color-gray-300: #CBD2DC;
+  --color-gray-600: #5A6577;
+  --color-gray-900: #151A23;
+
+  --color-status-success: #1E7F4F;
+  --color-status-success-bg: #E8F3EC;
+  --color-status-warning: #A15E0A;
+  --color-status-warning-bg: #F8F0E2;
+  --color-status-error: #B3362C;
+  --color-status-error-bg: #F9ECEA;
+  --color-status-info: #3D5474;
+  --color-status-info-bg: #EEF2F8;
+
+  /* Legacy Compat */
+  --color-navy-light: #1B3560;
+  --color-navy-medium: #12264B;
+  --color-teal-light: #0A504D;
+  --color-slate: #E4E8EE;
+  --color-charcoal: #151A23;
+  --color-warm-grey: #5A6577;
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #1A1A2E;
-  --card: #FFFFFF;
-  --card-foreground: #1A1A2E;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A2E;
-  --primary: #0B1D3A;
+  --background: #0C1B38;
+  --foreground: #FFFFFF;
+  --card: #FCFCFD;
+  --card-foreground: #151A23;
+  --popover: #FCFCFD;
+  --popover-foreground: #151A23;
+  --primary: #0C1B38;
   --primary-foreground: #FFFFFF;
-  --secondary: #F5F7FA;
-  --secondary-foreground: #1A1A2E;
-  --muted: #F5F7FA;
-  --muted-foreground: #6B7280;
-  --accent: #D4A017;
-  --accent-foreground: #FFFFFF;
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #D4A017;
-  --chart-1: #D4A017;
-  --chart-2: #1F7A8C;
-  --chart-3: #12355B;
-  --chart-4: #E8C547;
-  --chart-5: #0B1D3A;
-  --radius: 0.625rem;
-  --sidebar: #F5F7FA;
-  --sidebar-foreground: #1A1A2E;
-  --sidebar-primary: #0B1D3A;
+  --secondary: #F1F3F6;
+  --secondary-foreground: #151A23;
+  --muted: #F1F3F6;
+  --muted-foreground: #5A6577;
+  --accent: #EAF3F2;
+  --accent-foreground: #0E6461;
+  --destructive: #B3362C;
+  --border: #E4E8EE;
+  --input: #E4E8EE;
+  --ring: #0E6461;
+  --chart-1: #0E6461;
+  --chart-2: #4A6285;
+  --chart-3: #0C1B38;
+  --chart-4: #5D7699;
+  --chart-5: #1B3560;
+  --radius: 10px;
+  --sidebar: #FCFCFD;
+  --sidebar-foreground: #151A23;
+  --sidebar-primary: #0C1B38;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F5F7FA;
-  --sidebar-accent-foreground: #1A1A2E;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #D4A017;
-  --font-heading: 'Playfair Display', serif;
+  --sidebar-accent: #F1F3F6;
+  --sidebar-accent-foreground: #0C1B38;
+  --sidebar-border: #E4E8EE;
+  --sidebar-ring: #0E6461;
+  --font-heading: var(--font-heading);
+
+  /* Specific brand CSS variables */
+  --navy-50: #EEF2F8;
+  --navy-100: #E2E8F2;
+  --navy-600: #2A4877;
+  --navy-700: #1B3560;
+  --navy-800: #12264B;
+  --navy-900: #0C1B38;
+  --navy-950: #0C1B38;
+
+  --slate-400: #8296B1;
+  --slate-500: #5D7699;
+  --slate-600: #4A6285;
+
+  --teal-50: #EAF3F2;
+  --teal-100: #D9EAE9;
+  --teal-700: #0e6361;
+  --teal-800: #0e6361;
+
+  --gray-25: #FCFCFD;
+  --gray-50: #F7F8FA;
+  --gray-100: #F1F3F6;
+  --gray-200: #E4E8EE;
+  --gray-300: #CBD2DC;
+  --gray-600: #5A6577;
+  --gray-900: #151A23;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(15, 26, 43, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 26, 43, 0.06), 0 1px 2px rgba(15, 26, 43, 0.04);
+  --shadow-hover: 0 8px 16px rgba(15, 26, 43, 0.08), 0 2px 4px rgba(15, 26, 43, 0.04);
+  --shadow-lg: 0 20px 24px -4px rgba(15, 26, 43, 0.1), 0 8px 8px -4px rgba(15, 26, 43, 0.04);
+
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 280ms;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans scroll-smooth;
   }
@@ -133,48 +212,47 @@
 }
 
 /* ============================================================
-   Gold Gradient Accent — Logo Arc Motif
+   Teal Gradient Accent — Logo Arc Motif
    ============================================================ */
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #D4A017, #E8C547, #D4A017);
+.teal-gradient-text {
+  background: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gold-gradient-border {
-  border-image: linear-gradient(135deg, #D4A017, #E8C547, #D4A017) 1;
+.teal-gradient-border {
+  border-image: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C) 1;
 }
 
-.gold-underline {
+.teal-underline {
   position: relative;
 }
-.gold-underline::after {
+
+.teal-underline::after {
   content: '';
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #D4A017, #E8C547);
+  background: linear-gradient(90deg, #1F7A8C, #2A9DB0);
   border-radius: 2px;
 }
 
 /* ============================================================
-   Section Divider — Gold Arc
+   Section Divider — Teal Arc
    ============================================================ */
 
 .section-divider {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #D4A01733 20%,
-    #D4A01766 50%,
-    #D4A01733 80%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      #1F7A8C33 20%,
+      #1F7A8C66 50%,
+      #1F7A8C33 80%,
+      transparent 100%);
 }
 
 /* ============================================================
@@ -185,7 +263,7 @@
   background: rgba(11, 29, 58, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+  border-bottom: 1px solid rgba(31, 122, 140, 0.15);
 }
 
 .glass-card {
@@ -202,35 +280,39 @@
 .card-hover {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .card-hover:hover {
   transform: translateY(-6px);
   box-shadow:
     0 20px 40px rgba(11, 29, 58, 0.12),
-    0 0 0 1px rgba(212, 160, 23, 0.2);
+    0 0 0 1px rgba(31, 122, 140, 0.2);
 }
 
-.card-hover-gold {
+.card-hover-teal {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
-.card-hover-gold::before {
+
+.card-hover-teal::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, transparent, #D4A01740, transparent);
+  background: linear-gradient(135deg, transparent, #1F7A8C40, transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-.card-hover-gold:hover::before {
+
+.card-hover-teal:hover::before {
   opacity: 1;
 }
-.card-hover-gold:hover {
+
+.card-hover-teal:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(11, 29, 58, 0.1);
 }
@@ -244,6 +326,7 @@
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
@@ -254,6 +337,7 @@
   transform: translateX(-30px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .reveal-left.revealed {
   opacity: 1;
   transform: translateX(0);
@@ -264,6 +348,7 @@
   transform: translateX(30px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .reveal-right.revealed {
   opacity: 1;
   transform: translateX(0);
@@ -274,6 +359,7 @@
   transform: scale(0.95);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .reveal-scale.revealed {
   opacity: 1;
   transform: scale(1);
@@ -290,23 +376,7 @@
   pointer-events: none;
 }
 
-/* ============================================================
-   Custom Scrollbar
-   ============================================================ */
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0B1D3A;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D4A017, #B8860B);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #E8C547, #D4A017);
-}
 
 /* ============================================================
    Scroll to Top Button
@@ -320,26 +390,28 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #D4A017, #E8C547);
+  background: linear-gradient(135deg, #1F7A8C, #2A9DB0);
   color: #0B1D3A;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.3);
+  box-shadow: 0 4px 20px rgba(31, 122, 140, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
 }
+
 .scroll-top-btn.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
 .scroll-top-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 30px rgba(212, 160, 23, 0.5);
+  box-shadow: 0 6px 30px rgba(31, 122, 140, 0.5);
 }
 
 /* ============================================================
@@ -355,6 +427,7 @@
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -362,21 +435,34 @@
 }
 
 /* ============================================================
-   Hero Gold Arcs (Logo Motif)
+   Hero Teal Arcs (Logo Motif)
    ============================================================ */
 
 .hero-arc {
   position: absolute;
-  border: 2px solid rgba(212, 160, 23, 0.15);
+  border: 2px solid rgba(31, 122, 140, 0.15);
   border-radius: 50%;
   animation: arcFloat 20s ease-in-out infinite;
 }
 
 @keyframes arcFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(10px, -10px) rotate(2deg); }
-  50% { transform: translate(-5px, 5px) rotate(-1deg); }
-  75% { transform: translate(5px, 10px) rotate(1deg); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(10px, -10px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(-5px, 5px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(5px, 10px) rotate(1deg);
+  }
 }
 
 /* ============================================================
@@ -386,7 +472,7 @@
 .stat-value {
   font-family: var(--font-heading);
   font-weight: 700;
-  background: linear-gradient(135deg, #D4A017, #E8C547);
+  background: linear-gradient(135deg, #1F7A8C, #2A9DB0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -399,6 +485,7 @@
 .service-tab-active {
   position: relative;
 }
+
 .service-tab-active::after {
   content: '';
   position: absolute;
@@ -406,7 +493,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #D4A017, #E8C547);
+  background: linear-gradient(90deg, #1F7A8C, #2A9DB0);
 }
 
 /* ============================================================
@@ -423,12 +510,13 @@
   justify-content: center;
   position: relative;
 }
+
 .team-photo-placeholder::before {
   content: '';
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #D4A017, #E8C547, #D4A017);
+  background: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C);
   z-index: -1;
 }
 
@@ -440,8 +528,9 @@
   border-left: 3px solid transparent;
   transition: all 0.3s ease;
 }
+
 .pub-card:hover {
-  border-left-color: #D4A017;
+  border-left-color: #1F7A8C;
   background: #F5F7FA;
 }
 
@@ -453,6 +542,7 @@
   .heading-display {
     font-size: 2rem;
   }
+
   .team-photo-placeholder {
     width: 120px;
     height: 120px;
