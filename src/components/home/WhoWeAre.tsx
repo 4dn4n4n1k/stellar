@@ -35,7 +35,7 @@ export default function WhoWeAre() {
               {whoWeAre.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-gray-25 border border-gray-200 rounded-[10px] p-6 text-center card-hover-teal shadow-xs"
+                  className="bg-white border border-gray-200 rounded-[10px] p-6 text-center card-hover-teal shadow-sm"
                 >
                   <div className="text-3xl md:text-4xl font-extrabold mb-2 text-navy-900 font-heading">
                     <AnimatedCounter value={stat.value} />

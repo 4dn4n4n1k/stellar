@@ -31,7 +31,7 @@ export default function ExpertiseGlance() {
   const displayed = expertiseAreas.slice(0, 9);
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           kicker="Areas of Expertise"
@@ -44,7 +44,7 @@ export default function ExpertiseGlance() {
             const Icon = iconMap[area.icon] || Landmark;
             return (
               <ScrollReveal key={area.title} delay={i * 60}>
-                <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-6 card-hover-teal shadow-xs h-full">
+                <div className="bg-white border border-gray-200 rounded-[10px] p-6 card-hover-teal shadow-sm h-full">
                   <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-4 shadow-sm">
                     <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
                   </div>

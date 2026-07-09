@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/data";
 
 export default function ContactCTA() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="bg-navy-900 rounded-[10px] p-10 md:p-14 text-center shadow-lg relative overflow-hidden">

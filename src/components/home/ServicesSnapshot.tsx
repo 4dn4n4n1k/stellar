@@ -21,7 +21,7 @@ export default function ServicesSnapshot() {
   const displayed = servicesData.slice(0, 4);
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-gray-200">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           kicker="Our Services"
@@ -34,7 +34,7 @@ export default function ServicesSnapshot() {
             const Icon = iconMap[service.icon] || Search;
             return (
               <ScrollReveal key={service.id} delay={i * 80}>
-                <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-8 hover:translate-y-[-2px] hover:shadow-hover transition-all duration-180 h-full">
+                <div className="bg-white border border-gray-200 rounded-[10px] p-8 hover:translate-y-[-2px] hover:shadow-hover transition-all duration-180 h-full">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center shrink-0 shadow-sm">
                       <Icon className="text-teal-100" size={22} strokeWidth={1.5} />

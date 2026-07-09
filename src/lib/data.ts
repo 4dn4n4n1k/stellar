@@ -9,7 +9,7 @@ export const siteConfig = {
     "Supporting governments, donors, civil society, and private sector partners through research, evaluation, governance, and strategic advisory services.",
   founded: 2026,
   email: "stellarassociatesbd@gmail.com",
-  phones: ["+8801611-378241", "+8801713141185"],
+  phones: ["+8801611-378241", "+8801713-141185"],
   address:
     "23/2, SEL HUQ Sky Park, Level 04, Mirpur Road, Shyamoli, Dhaka - 1207",
 };
