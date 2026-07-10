@@ -7,17 +7,17 @@ export default function WhoWeAre() {
   return (
     <section className="py-14 md:py-16 bg-[#f7f8fa] relative overflow-hidden">
       {/* Subtle dot pattern background */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none select-none" 
-        style={{ 
-          backgroundImage: "radial-gradient(#156E67 1px, transparent 1px)", 
-          backgroundSize: "24px 24px" 
-        }} 
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none select-none"
+        style={{
+          backgroundImage: "radial-gradient(#156E67 1px, transparent 1px)",
+          backgroundSize: "24px 24px"
+        }}
       />
 
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
-          
+
           {/* Left Column: Editorial Content */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <ScrollReveal variant="left">
@@ -47,7 +47,7 @@ export default function WhoWeAre() {
           <div className="lg:col-span-6 w-full">
             <ScrollReveal variant="right">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
-                
+
                 {/* Metric 1: Founding Partners */}
                 <div className="bg-white border border-gray-200/50 rounded-[20px] px-4 py-6 text-center shadow-[0_10px_25px_rgba(21,110,103,0.04)] hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(21,110,103,0.08)] transition-all duration-300 flex flex-col justify-center min-h-[160px]">
                   <div className="text-4xl sm:text-5xl font-extrabold text-[#156E67] mb-3 font-heading tracking-tight">

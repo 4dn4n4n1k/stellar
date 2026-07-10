@@ -72,6 +72,13 @@ export default function ContactCTA() {
                   {siteConfig.phones[0]}
                 </a>
                 <span className="hidden sm:inline text-white/20">•</span>
+                <a
+                  href={`tel:${siteConfig.phones[1].replace(/[- ]/g, "")}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {siteConfig.phones[1]}
+                </a>
+                <span className="hidden sm:inline text-white/20">•</span>
                 <span>Dhaka, Bangladesh</span>
               </div>
             </div>

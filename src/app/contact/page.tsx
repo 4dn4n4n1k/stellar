@@ -201,14 +201,16 @@ export default function ContactPage() {
                       )}
                     </div>
 
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full sm:w-auto bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm rounded-[6px] shadow-sm transition-colors duration-180 px-10"
-                    >
-                      <Send className="mr-2" size={18} strokeWidth={1.5} />
-                      Send Message
-                    </Button>
+                    <div className="flex justify-center">
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="w-full sm:w-auto bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm rounded-[6px] shadow-sm transition-colors duration-180 px-10"
+                      >
+                        <Send className="mr-2" size={18} strokeWidth={1.5} />
+                        Send Message
+                      </Button>
+                    </div>
                   </form>
                 )}
               </ScrollReveal>

@@ -39,7 +39,7 @@ export default function PublicationsPage() {
           <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
             Knowledge Hub
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading">
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[#fce057] font-extrabold mb-6 font-heading">
             Publications
           </h1>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">

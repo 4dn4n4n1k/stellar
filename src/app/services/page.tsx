@@ -46,7 +46,7 @@ export default function ServicesPage() {
           <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
             What We Do
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading">
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[#fce057] font-extrabold mb-6 font-heading">
             Our Services
           </h1>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -69,11 +69,10 @@ export default function ServicesPage() {
                   <button
                     key={service.id}
                     onClick={() => setActiveTab(service.id)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-sm font-semibold transition-colors duration-180 border ${
-                      isActive
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-sm font-semibold transition-colors duration-180 border ${isActive
                         ? "bg-navy-900 text-white border-navy-900 shadow-sm"
                         : "bg-gray-50 text-gray-900 border-gray-200 hover:bg-gray-100"
-                    }`}
+                      }`}
                   >
                     <Icon size={16} strokeWidth={1.5} />
                     <span className="hidden sm:inline">{service.title}</span>

@@ -38,7 +38,7 @@ export default function AboutPage() {
           <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
             About Us
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading">
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[#fce057] font-extrabold mb-6 font-heading">
             Our Story
           </h1>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -170,7 +170,7 @@ export default function AboutPage() {
             <a
               href="/stellar-profile.pdf"
               download
-              className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-3 rounded-[6px] shadow-sm transition-colors duration-180"
+              className="inline-flex items-center gap-2 bg-[#fce057] hover:bg-[#ebd046] text-[#0c1b38] font-semibold px-8 py-3 rounded-[6px] shadow-sm transition-colors duration-180"
             >
               <Download size={18} strokeWidth={1.5} />
               Download PDF

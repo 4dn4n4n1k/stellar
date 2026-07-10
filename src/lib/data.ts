@@ -441,7 +441,6 @@ export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Expertise", href: "/expertise" },
   { label: "Team", href: "/team" },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "Publications", href: "/publications" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
