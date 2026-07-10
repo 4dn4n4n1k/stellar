@@ -128,9 +128,8 @@ export default function ContactPage() {
                           value={formState.name}
                           onChange={handleChange}
                           placeholder="Your full name"
-                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
-                            errors.name ? "border-red-400" : ""
-                          }`}
+                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.name ? "border-red-400" : ""
+                            }`}
                         />
                         {errors.name && (
                           <p className="text-status-error text-xs mt-1">
@@ -150,9 +149,8 @@ export default function ContactPage() {
                           value={formState.email}
                           onChange={handleChange}
                           placeholder="your@email.com"
-                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
-                            errors.email ? "border-red-400" : ""
-                          }`}
+                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.email ? "border-red-400" : ""
+                            }`}
                         />
                         {errors.email && (
                           <p className="text-status-error text-xs mt-1">
@@ -172,9 +170,8 @@ export default function ContactPage() {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="How can we help?"
-                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${
-                          errors.subject ? "border-red-400" : ""
-                        }`}
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.subject ? "border-red-400" : ""
+                          }`}
                       />
                       {errors.subject && (
                         <p className="text-status-error text-xs mt-1">
@@ -194,9 +191,8 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="Tell us about your project or inquiry..."
                         rows={6}
-                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] resize-none ${
-                          errors.message ? "border-red-400" : ""
-                        }`}
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] resize-none ${errors.message ? "border-red-400" : ""
+                          }`}
                       />
                       {errors.message && (
                         <p className="text-status-error text-xs mt-1">
@@ -221,7 +217,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="lg:col-span-2">
               <ScrollReveal variant="right">
-                <div className="bg-navy-900 rounded-[10px] p-8 h-full shadow-sm">
+                <div className="bg-navy-brand rounded-[10px] p-8 h-full shadow-sm">
                   <h3 className="heading-section text-2xl text-white font-extrabold mb-8 font-heading">
                     Contact Information
                   </h3>

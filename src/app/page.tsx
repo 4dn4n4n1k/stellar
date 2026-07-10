@@ -7,7 +7,7 @@ import ContactCTA from "@/components/home/ContactCTA";
 
 export default function HomePage() {
   return (
-    <div className="page-enter">
+    <div>
       <HeroSection />
       <WhoWeAre />
       <ExpertiseGlance />
