@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { whoWeAre, vision, mission, coreValues } from "@/lib/data";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -19,114 +20,223 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const paragraphs = whoWeAre.fullIntro.split("\n\n");
+
   return (
     <div className="page-enter">
-      {/* Hero Banner */}
-      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
-        {/* Brand Pattern Background */}
-        <svg
-          className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
-          viewBox="0 0 400 400"
-          fill="none"
-        >
-          <circle cx="400" cy="0" r="100" stroke="white" strokeWidth="1" />
-          <circle cx="400" cy="0" r="200" stroke="white" strokeWidth="1" />
-          <circle cx="400" cy="0" r="300" stroke="white" strokeWidth="1" />
-        </svg>
-
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
-            About Us
-          </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[#fce057] font-extrabold mb-6 font-heading">
-            Our Story
-          </h1>
-          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-            Founded in 2026, Stellar Associates brings together five experienced
-            development professionals united by a shared commitment to
-            evidence-based, inclusive development.
-          </p>
+      {/* Editorial Hero */}
+      <section className="bg-navy-950 pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+        {/* Subtle geometric/architectural lines representing research and precision */}
+        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
+          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 120 H1440 M0 280 H1440 M0 440 H1440" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
+            <path d="M120 0 V600 M360 0 V600 M600 0 V600 M840 0 V600 M1080 0 V600 M1320 0 V600" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
+            
+            <circle cx="1080" cy="280" r="200" stroke="white" strokeWidth="1" strokeOpacity="0.5" />
+            <circle cx="1080" cy="280" r="120" stroke="white" strokeWidth="1" strokeOpacity="0.3" />
+            <circle cx="1080" cy="280" r="40" stroke="white" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.4" />
+            
+            <line x1="880" y1="80" x2="1280" y2="480" stroke="white" strokeWidth="1" strokeOpacity="0.4" />
+            <line x1="880" y1="480" x2="1280" y2="80" stroke="white" strokeWidth="1.5" strokeOpacity="0.2" />
+            
+            <path d="M355 120h10M595 120h10M835 120h10M1075 120h10 M355 280h10M595 280h10M835 280h10M1075 280h10" stroke="white" strokeWidth="1" />
+          </svg>
         </div>
-      </section>
 
-      {/* Full Intro */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="prose prose-lg max-w-none">
-              {whoWeAre.fullIntro.split("\n\n").map((para, i) => (
-                <p
-                  key={i}
-                  className="text-gray-900 leading-relaxed mb-6 text-base"
-                >
-                  {para}
-                </p>
-              ))}
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+            <div className="lg:col-span-8 text-left">
+              <p 
+                className="text-[#fce057] font-bold text-xs uppercase tracking-[0.2em] mb-4 animate-fade-slide-up font-heading"
+                style={{ animationDelay: '100ms' }}
+              >
+                About Us
+              </p>
+              <h1 
+                className="heading-display text-4xl md:text-5xl lg:text-7xl text-white font-extrabold mb-6 tracking-tight leading-tight animate-fade-slide-up"
+                style={{ animationDelay: '250ms' }}
+              >
+                Our Story
+              </h1>
+              <p 
+                className="text-white/80 text-lg md:text-xl leading-relaxed max-w-3xl animate-fade-slide-up"
+                style={{ animationDelay: '400ms' }}
+              >
+                Founded in 2026, Stellar Associates brings together five experienced
+                development professionals united by a shared commitment to
+                evidence-based, inclusive development.
+              </p>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Vision & Mission */}
-      <section className="py-16 md:py-24 bg-gray-50 border-t border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ScrollReveal variant="left">
-              <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-8 md:p-10 h-full shadow-xs">
-                <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
-                  <svg
-                    className="text-teal-100"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="6" />
-                    <circle cx="12" cy="12" r="2" />
-                  </svg>
+            <div className="hidden lg:col-span-4 lg:flex justify-end pr-4 animate-fade-slide-up" style={{ animationDelay: '500ms' }}>
+              <div className="border-l border-white/20 pl-8 py-2 space-y-6">
+                <div>
+                  <span className="text-white text-3xl font-extrabold font-heading block tracking-wide">5</span>
+                  <span className="text-white/40 text-[10px] font-mono block uppercase tracking-widest mt-1">Founding Partners</span>
                 </div>
-                <h3 className="heading-section text-2xl text-navy-900 font-extrabold mb-4 font-heading">
-                  Our Vision
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{vision}</p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal variant="right">
-              <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-8 md:p-10 h-full shadow-xs">
-                <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
-                  <svg
-                    className="text-teal-100"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
+                <div>
+                  <span className="text-white text-3xl font-extrabold font-heading block tracking-wide">10+</span>
+                  <span className="text-white/40 text-[10px] font-mono block uppercase tracking-widest mt-1">Sectors Covered</span>
                 </div>
-                <h3 className="heading-section text-2xl text-navy-900 font-extrabold mb-4 font-heading">
-                  Our Mission
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{mission}</p>
+                <div>
+                  <span className="text-white text-3xl font-extrabold font-heading block tracking-wide">25+</span>
+                  <span className="text-white/40 text-[10px] font-mono block uppercase tracking-widest mt-1">Years Combined Experience</span>
+                </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* Our Story - Editorial Composition */}
+      <section className="py-20 md:py-28 bg-white overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Narrative Block 1: Paragraph Left / Quote Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center mb-20 md:mb-28">
+            <div className="lg:col-span-7">
+              <ScrollReveal variant="left">
+                <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.15em] block mb-4">THE FOUNDATION</span>
+                <p className="text-gray-900 text-lg md:text-xl leading-relaxed font-semibold mb-6">
+                  {paragraphs[0].split(". With decades")[0]}.
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  With decades{paragraphs[0].split(". With decades")[1]}
+                </p>
+              </ScrollReveal>
+            </div>
+            
+            <div className="lg:col-span-5 lg:pl-8 lg:border-l border-gray-200">
+              <ScrollReveal variant="right" delay={150}>
+                <blockquote className="relative my-4">
+                  <span className="absolute -top-6 -left-4 text-gray-100 text-7xl font-serif select-none pointer-events-none">“</span>
+                  <p className="text-navy-900 text-xl md:text-2xl font-extrabold font-heading leading-snug relative z-10 italic">
+                    The Stellar team brings a unique blend of programmatic expertise, strategic advisory capacity, and operational excellence.
+                  </p>
+                </blockquote>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* Narrative Block 2: Tag Matrix Left / Paragraph Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center mb-20 md:mb-28">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <ScrollReveal variant="left" delay={150}>
+                <div className="relative border border-gray-200 rounded-[10px] p-8 bg-gray-50/50 shadow-xs">
+                  <div className="absolute top-4 right-4 text-[9px] font-mono text-gray-400 uppercase tracking-widest">Profile</div>
+                  <h4 className="font-heading font-extrabold text-navy-900 text-sm mb-6 tracking-wider uppercase">Partner Network</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["USAID", "United Nations", "Diplomatic Missions", "Government Ministries", "BGMEA", "BKMEA", "FBCCI", "AmCham", "Civil Society"].map((network) => (
+                      <span key={network} className="bg-white border border-gray-200 text-navy-900 text-xs font-semibold px-3 py-2 rounded-sm shadow-2xs">
+                        {network}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <ScrollReveal variant="right">
+                <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.15em] block mb-4">OUR TEAM</span>
+                <p className="text-gray-900 text-lg md:text-xl leading-relaxed mb-6 font-semibold">
+                  {paragraphs[1]}
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  Our directors bridge global standards with local realities, working across sectors to deliver evidence-driven insights and sustainable impacts.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* Narrative Block 3: Asymmetric Grid Composition */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
+            <div className="lg:col-span-7">
+              <ScrollReveal variant="left">
+                <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.15em] block mb-4">OUR POSITIONING</span>
+                <p className="text-gray-900 text-lg md:text-xl leading-relaxed mb-6">
+                  {paragraphs[2].split(". The firm")[0]}.
+                </p>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  The firm{paragraphs[2].split(". The firm")[1]}
+                </p>
+              </ScrollReveal>
+            </div>
+
+            <div className="lg:col-span-5 bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 relative overflow-hidden shadow-sm border border-white/5">
+              <ScrollReveal variant="right" delay={150}>
+                {/* Subtle blueprint line overlay */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+                  <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                    <circle cx="100" cy="0" r="80" stroke="white" strokeWidth="0.5" />
+                    <line x1="20" y1="0" x2="100" y2="80" stroke="white" strokeWidth="0.5" />
+                  </svg>
+                </div>
+                <h4 className="font-heading font-extrabold text-[#fce057] text-xs uppercase tracking-[0.15em] mb-4">Our Commitment</h4>
+                <p className="text-white/95 text-base md:text-lg leading-relaxed font-medium italic relative z-10">
+                  "{paragraphs[3]}"
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Vision & Mission - Staggered Asymmetric Editorial Layout */}
+      <section className="py-20 md:py-28 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Left Column: Sticky Title */}
+            <div className="lg:col-span-4 lg:sticky lg:top-24">
+              <ScrollReveal variant="left">
+                <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.2em] block mb-3">Strategic Direction</span>
+                <h2 className="heading-section text-3xl md:text-4xl text-navy-900 font-extrabold tracking-tight mb-4 font-heading">
+                  Purpose & Pathway
+                </h2>
+                <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
+                  We integrate global standards with local realities to drive democratic governance, accountability, and inclusive progress across Bangladesh.
+                </p>
+              </ScrollReveal>
+            </div>
+            
+            {/* Right Column: Staggered Cards */}
+            <div className="lg:col-span-8 space-y-12">
+              {/* Vision Card */}
+              <ScrollReveal variant="right" delay={100}>
+                <div className="bg-white border-l-4 border-[#0e6461] rounded-r-[10px] p-8 md:p-10 shadow-xs relative overflow-hidden">
+                  <div className="absolute top-6 right-8 text-6xl font-serif text-gray-100 select-none pointer-events-none">01</div>
+                  <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR VISION</span>
+                  <h3 className="heading-section text-xl md:text-2xl text-navy-900 font-extrabold mb-4 font-heading max-w-xl">
+                    Leading home-grown consulting that connects global standards with local expertise.
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-base">
+                    {vision}
+                  </p>
+                </div>
+              </ScrollReveal>
+              
+              {/* Mission Card */}
+              <ScrollReveal variant="right" delay={200}>
+                <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
+                  <div className="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none pointer-events-none">02</div>
+                  <span className="text-[#fce057] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR MISSION</span>
+                  <h3 className="heading-section text-xl md:text-2xl text-white font-extrabold mb-4 font-heading max-w-xl">
+                    High-quality advisory and capacity building promoting accountability and sustainable development.
+                  </h3>
+                  <p className="text-white/80 leading-relaxed text-base">
+                    {mission}
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values - Asymmetric Featured Grid */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="Core Values"
@@ -134,47 +244,110 @@ export default function AboutPage() {
             subtitle="Deeply embedded values shaping our consulting practice and partnerships."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {coreValues.map((value, i) => {
-              const Icon = iconMap[value.icon] || Shield;
-              return (
-                <ScrollReveal key={value.title} delay={i * 60}>
-                  <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-6 text-center card-hover-teal shadow-xs h-full">
-                    <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center mx-auto mb-4 shadow-sm">
-                      <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12">
+            {/* Featured Value Card (Integrity & Accountability) */}
+            <div className="lg:col-span-5 h-full">
+              {(() => {
+                const value = coreValues[0];
+                const Icon = iconMap[value.icon] || Shield;
+                return (
+                  <ScrollReveal variant="left" className="h-full">
+                    <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm relative overflow-hidden border border-white/5">
+                      {/* Blueprint grid design overlay */}
+                      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                          <path d="M0 20 H100 M0 40 H100 M0 60 H100 M0 80 H100" stroke="white" strokeWidth="0.5" />
+                          <path d="M20 0 V100 M40 0 V100 M60 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <div className="w-14 h-14 rounded-[8px] bg-white/10 flex items-center justify-center mb-8 shadow-sm">
+                          <Icon className="text-[#fce057]" size={28} strokeWidth={1.5} />
+                        </div>
+                        <span className="text-[#fce057] text-xs font-mono tracking-[0.2em] block mb-2">FEATURED PRINCIPLE</span>
+                        <h3 className="text-white font-extrabold text-2xl mb-4 font-heading">
+                          {value.title}
+                        </h3>
+                        <p className="text-white/80 text-base leading-relaxed">
+                          {value.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-12 text-white/40 text-xs font-mono">
+                        STELLAR ASSOCIATES &copy; 2026
+                      </div>
                     </div>
-                    <h3 className="text-navy-900 font-bold text-base mb-2 font-heading">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
+                  </ScrollReveal>
+                );
+              })()}
+            </div>
+
+            {/* Other 4 Value Cards Grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {coreValues.slice(1).map((value, i) => {
+                const Icon = iconMap[value.icon] || Shield;
+                return (
+                  <ScrollReveal key={value.title} delay={i * 80} variant="right" className="h-full">
+                    <div className="bg-gray-50/50 border border-gray-200 rounded-[10px] p-8 flex flex-col justify-between h-full card-hover-teal shadow-xs">
+                      <div>
+                        <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
+                          <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-navy-900 font-bold text-lg mb-3 font-heading">
+                          {value.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {value.description}
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Download Profile */}
-      <section className="py-16 bg-navy-950 border-t border-navy-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Download Profile Card - Mockup Styled (Only Kicker, Title, Subtitle, and Primary Button - Compact Size) */}
+      <section className="py-20 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h3 className="heading-section text-2xl text-white font-extrabold mb-4 font-heading">
-              Download Our Company Profile
-            </h3>
-            <p className="text-white/60 mb-6">
-              Get a comprehensive overview of our services, expertise, and team.
-            </p>
-            <a
-              href="/stellar-profile.pdf"
-              download
-              className="inline-flex items-center gap-2 bg-[#fce057] hover:bg-[#ebd046] text-[#0c1b38] font-semibold px-8 py-3 rounded-[6px] shadow-sm transition-colors duration-180"
-            >
-              <Download size={18} strokeWidth={1.5} />
-              Download PDF
-            </a>
+            <div className="max-w-3xl mx-auto bg-[#0c1b38] border border-white/5 rounded-[24px] py-12 px-6 md:py-16 md:px-12 text-center relative overflow-hidden shadow-lg">
+              {/* Subtle circular overlay graphics to match the mockup */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
+                <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="0" cy="200" r="180" stroke="white" strokeWidth="1" />
+                  <circle cx="0" cy="200" r="300" stroke="white" strokeWidth="0.5" />
+                  <circle cx="1000" cy="200" r="180" stroke="white" strokeWidth="1" />
+                  <circle cx="1000" cy="200" r="300" stroke="white" strokeWidth="0.5" />
+                </svg>
+              </div>
+
+              <div className="relative z-10">
+                <p className="text-white/50 text-xs font-bold uppercase tracking-[0.25em] mb-4 font-mono">
+                  COMPANY PROFILE
+                </p>
+                <h3 className="heading-display text-2xl sm:text-3xl md:text-4xl text-white font-extrabold mb-4 font-heading max-w-2xl mx-auto leading-tight">
+                  Download Our Company Profile
+                </h3>
+                <p className="text-white/60 max-w-xl mx-auto text-sm sm:text-base mb-8 leading-relaxed font-normal">
+                  Get a comprehensive overview of our services, expertise, and team.
+                </p>
+
+                <div className="flex justify-center">
+                  <a
+                    href="/stellar-profile.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-[#0e6461] hover:bg-[#0a504d] text-white font-semibold h-[48px] px-8 rounded-[10px] shadow-sm transition-all duration-[220ms] hover:translate-y-[-2px]"
+                  >
+                    <Download size={16} strokeWidth={2} />
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>

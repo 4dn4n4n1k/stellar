@@ -28,13 +28,22 @@ export default function TeamPage() {
         </svg>
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3">
+          <p 
+            className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3 animate-fade-slide-up"
+            style={{ animationDelay: '100ms' }}
+          >
             Our People
           </p>
-          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[#fce057] font-extrabold mb-6 font-heading">
+          <h1 
+            className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading animate-fade-slide-up"
+            style={{ animationDelay: '250ms' }}
+          >
             Our Team
           </h1>
-          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p 
+            className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto animate-fade-slide-up"
+            style={{ animationDelay: '400ms' }}
+          >
             A multidisciplinary team of experienced professionals with deep
             expertise across governance, research, labor rights, and inclusive
             development.
