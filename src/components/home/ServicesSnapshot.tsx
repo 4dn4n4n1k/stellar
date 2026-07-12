@@ -30,16 +30,16 @@ export default function ServicesSnapshot() {
   return (
     <section className="py-12 md:py-14 bg-[#f7f8fa] relative overflow-hidden">
       {/* Subtle background geometric pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.02] pointer-events-none select-none" 
-        style={{ 
-          backgroundImage: "radial-gradient(#156E67 1.2px, transparent 1.2px)", 
-          backgroundSize: "32px 32px" 
-        }} 
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none select-none"
+        style={{
+          backgroundImage: "radial-gradient(#156E67 1.2px, transparent 1.2px)",
+          backgroundSize: "32px 32px"
+        }}
       />
 
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header Block */}
         <div className="text-center mb-10 md:mb-12 flex flex-col items-center">
           <ScrollReveal variant="up">
@@ -61,7 +61,7 @@ export default function ServicesSnapshot() {
 
         {/* Asymmetrical Staggered Editorial Layout (Visible only on lg and above) */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-          
+
           {/* Left Column (No Offset) */}
           <div className="space-y-6 lg:space-y-8">
             {leftColServices.map((service, index) => {
@@ -72,7 +72,7 @@ export default function ServicesSnapshot() {
               return (
                 <ScrollReveal key={service.id} delay={index * 60} variant="up">
                   <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 lg:p-7 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
-                    
+
                     {/* Faint document numbering */}
                     <span className="absolute top-6 right-6 text-xs font-bold tracking-widest text-gray-300 font-heading select-none">
                       {numStr}
@@ -124,7 +124,7 @@ export default function ServicesSnapshot() {
               return (
                 <ScrollReveal key={service.id} delay={index * 60 + 30} variant="up">
                   <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 lg:p-7 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
-                    
+
                     {/* Faint document numbering */}
                     <span className="absolute top-6 right-6 text-xs font-bold tracking-widest text-gray-300 font-heading select-none">
                       {numStr}
@@ -178,7 +178,7 @@ export default function ServicesSnapshot() {
             return (
               <ScrollReveal key={service.id} delay={index * 50} variant="up">
                 <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
-                  
+
                   {/* Faint document numbering */}
                   <span className="absolute top-6 right-6 text-xs font-bold tracking-widest text-gray-300 font-heading select-none">
                     {numStr}
