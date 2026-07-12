@@ -15,7 +15,7 @@ export default function TeamPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner */}
-      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+      <section className="bg-navy-950 pt-28 pb-14 md:pt-32 md:pb-18 relative overflow-hidden">
         {/* Brand Pattern Background */}
         <svg
           className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
@@ -52,17 +52,16 @@ export default function TeamPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-10 pb-16 md:pt-12 md:pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            kicker="Leadership"
-            title="Leadership Team"
-            subtitle="Our founding partners bring decades of combined development experience."
-          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
+              <ScrollReveal
+                key={i}
+                delay={i * 80}
+                className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] shrink-0 flex flex-col"
+              >
                 <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-8 text-center card-hover-teal h-full shadow-xs flex flex-col justify-between">
                   <div>
                     {/* Premium Placeholder Photo */}

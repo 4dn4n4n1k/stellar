@@ -15,7 +15,7 @@ export default function CareersPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner */}
-      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+      <section className="bg-navy-950 pt-28 pb-14 md:pt-32 md:pb-18 relative overflow-hidden">
         {/* Brand Pattern Background */}
         <svg
           className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
@@ -51,27 +51,26 @@ export default function CareersPage() {
       </section>
 
       {/* Join Our Network */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-10 pb-12 md:pt-12 md:pb-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <div className="w-16 h-16 rounded-full bg-navy-900 flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <Users className="text-teal-100" size={24} strokeWidth={1.5} />
+            <div className="text-center mb-10 md:mb-12">
+              <div className="w-12 h-12 rounded-full bg-navy-900 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <Users className="text-teal-100" size={20} strokeWidth={2} />
               </div>
-              <h2 className="heading-section text-3xl md:text-4xl text-gray-900 font-extrabold mb-4 font-heading">
+              <h2 className="heading-section text-2xl md:text-3xl text-gray-900 font-extrabold mb-3 font-heading">
                 Join Our Expert Network
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                Stellar Associates maintains a roster of qualified professionals
-                across multiple development sectors. We regularly engage
-                short-term and long-term consultants for research, evaluation,
+              <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+                Stellar Associates maintains a roster of qualified professionals across multiple development sectors.<br className="hidden md:inline" />
+                We regularly engage short-term and long-term consultants for research, evaluation,<br className="hidden md:inline" />
                 training, and advisory assignments.
               </p>
             </div>
           </ScrollReveal>
 
           {/* What we look for */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: Briefcase,
@@ -108,7 +107,7 @@ export default function CareersPage() {
       </section>
 
       {/* Current Opportunities */}
-      <section className="py-16 md:py-24 bg-gray-50 border-t border-b border-gray-200">
+      <section className="pt-10 pb-8 md:pt-12 md:pb-10 bg-gray-50 border-t border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="Opportunities"
@@ -117,18 +116,18 @@ export default function CareersPage() {
           />
 
           <ScrollReveal>
-            <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-10 text-center shadow-xs max-w-2xl mx-auto">
-              <div className="w-16 h-16 rounded-full bg-navy-900/5 flex items-center justify-center mx-auto mb-4">
-                <Briefcase className="text-navy-900/30" size={28} strokeWidth={1.5} />
+            <div className="bg-gray-25 border border-gray-200 rounded-[10px] p-6 sm:p-8 text-center shadow-xs max-w-xl mx-auto">
+              <div className="w-12 h-12 rounded-full bg-navy-900/5 flex items-center justify-center mx-auto mb-3">
+                <Briefcase className="text-navy-900/30" size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="text-navy-900 font-bold text-xl mb-2 font-heading">
+              <h3 className="text-navy-900 font-bold text-lg mb-2 font-heading">
                 No Current Openings
               </h3>
-              <p className="text-gray-600 text-base mb-6">
+              <p className="text-gray-500 text-sm sm:text-base mb-3 max-w-md mx-auto">
                 We don&apos;t have any active vacancies at the moment, but we&apos;re always
                 looking for talented professionals to join our network.
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-400 text-xs sm:text-sm">
                 Please submit your CV to be considered for future opportunities.
               </p>
             </div>
@@ -136,24 +135,43 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Submit CV CTA */}
-      <section className="py-16 bg-navy-950 border-t border-navy-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Submit CV CTA - Mockup Styled */}
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16 bg-gray-50">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h3 className="heading-section text-2xl text-white font-extrabold mb-4 font-heading">
-              Submit Your CV
-            </h3>
-            <p className="text-white/60 mb-6 max-w-xl mx-auto">
-              Interested in working with us? Send your CV and a brief cover
-              letter to our team.
-            </p>
-            <a
-              href="mailto:stellarassociatesbd@gmail.com?subject=CV Submission — Expert Network"
-              className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-3 rounded-[6px] shadow-sm transition-colors duration-180"
-            >
-              <Send size={18} strokeWidth={1.5} />
-              Submit CV via Email
-            </a>
+            <div className="max-w-2xl mx-auto bg-[#0c1b38] border border-white/5 rounded-[24px] py-8 px-6 md:py-10 md:px-10 text-center relative overflow-hidden shadow-lg">
+              {/* Subtle circular overlay graphics to match the mockup */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
+                <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="0" cy="200" r="180" stroke="white" strokeWidth="1" />
+                  <circle cx="0" cy="200" r="300" stroke="white" strokeWidth="0.5" />
+                  <circle cx="1000" cy="200" r="180" stroke="white" strokeWidth="1" />
+                  <circle cx="1000" cy="200" r="300" stroke="white" strokeWidth="0.5" />
+                </svg>
+              </div>
+
+              <div className="relative z-10">
+                <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.25em] mb-3 font-mono">
+                  JOIN OUR NETWORK
+                </p>
+                <h3 className="heading-display text-xl sm:text-2xl md:text-3xl text-white font-extrabold mb-3 font-heading max-w-2xl mx-auto leading-tight">
+                  Submit Your CV
+                </h3>
+                <p className="text-white/60 max-w-xl mx-auto text-xs sm:text-sm mb-6 leading-relaxed font-normal">
+                  Interested in working with us? Send your CV and a brief cover letter to our team.
+                </p>
+
+                <div className="flex justify-center">
+                  <a
+                    href="mailto:stellarassociatesbd@gmail.com?subject=CV Submission — Expert Network"
+                    className="inline-flex items-center gap-2 bg-[#fce057] hover:bg-[#ebd04e] text-[#0c1b38] font-semibold h-[42px] px-6 rounded-[8px] text-sm shadow-sm transition-all duration-[220ms] hover:translate-y-[-2px]"
+                  >
+                    <Send size={15} strokeWidth={2} />
+                    Submit CV via Email
+                  </a>
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>

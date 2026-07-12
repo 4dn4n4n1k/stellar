@@ -492,27 +492,7 @@ export default function ServicesPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner with Geometric/Architectural Blueprint */}
-      <section className="bg-navy-950 pt-32 pb-20 md:pt-44 md:pb-28 relative overflow-hidden">
-        {/* Subtle geometric/architectural lines representing research and precision */}
-        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
-          <svg className="w-full h-full" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 80 H1440 M0 200 H1440 M0 320 H1440" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
-            <path d="M160 0 V400 M480 0 V400 M800 0 V400 M1120 0 V400 M1280 0 V400" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
-            
-            <circle cx="1200" cy="200" r="150" stroke="white" strokeWidth="1" strokeOpacity="0.5" />
-            <circle cx="1200" cy="200" r="90" stroke="white" strokeWidth="1" strokeOpacity="0.3" />
-            <circle cx="1200" cy="200" r="30" stroke="white" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.4" />
-            
-            <path d="M1195 200h10M1200 195v10" stroke="white" strokeWidth="1" />
-            
-            <line x1="900" y1="50" x2="1350" y2="350" stroke="white" strokeWidth="1" strokeOpacity="0.3" />
-            <line x1="900" y1="350" x2="1350" y2="50" stroke="white" strokeWidth="1.5" strokeOpacity="0.2" />
-            
-            <circle cx="1012" cy="125" r="4" fill="white" fillOpacity="0.6" />
-            <circle cx="1125" cy="200" r="4" fill="white" fillOpacity="0.6" />
-            <circle cx="1237" cy="275" r="4" fill="white" fillOpacity="0.6" />
-          </svg>
-        </div>
+      <section className="bg-navy-950 pt-28 pb-14 md:pt-32 md:pb-18 relative overflow-hidden">
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <p 
@@ -537,7 +517,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Tabs / Detail Section */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="pt-10 pb-20 md:pt-12 md:pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* McKinsey-Style Tab Navigation */}

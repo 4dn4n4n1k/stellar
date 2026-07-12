@@ -25,23 +25,7 @@ export default function AboutPage() {
   return (
     <div className="page-enter">
       {/* Editorial Hero */}
-      <section className="bg-navy-950 pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
-        {/* Subtle geometric/architectural lines representing research and precision */}
-        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
-          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120 H1440 M0 280 H1440 M0 440 H1440" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
-            <path d="M120 0 V600 M360 0 V600 M600 0 V600 M840 0 V600 M1080 0 V600 M1320 0 V600" stroke="white" strokeWidth="0.5" strokeOpacity="0.3" />
-            
-            <circle cx="1080" cy="280" r="200" stroke="white" strokeWidth="1" strokeOpacity="0.5" />
-            <circle cx="1080" cy="280" r="120" stroke="white" strokeWidth="1" strokeOpacity="0.3" />
-            <circle cx="1080" cy="280" r="40" stroke="white" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.4" />
-            
-            <line x1="880" y1="80" x2="1280" y2="480" stroke="white" strokeWidth="1" strokeOpacity="0.4" />
-            <line x1="880" y1="480" x2="1280" y2="80" stroke="white" strokeWidth="1.5" strokeOpacity="0.2" />
-            
-            <path d="M355 120h10M595 120h10M835 120h10M1075 120h10 M355 280h10M595 280h10M835 280h10M1075 280h10" stroke="white" strokeWidth="1" />
-          </svg>
-        </div>
+      <section className="bg-navy-950 pt-24 pb-10 md:pt-28 md:pb-14 relative overflow-hidden">
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
@@ -204,13 +188,13 @@ export default function AboutPage() {
             <div className="lg:col-span-8 space-y-12">
               {/* Vision Card */}
               <ScrollReveal variant="right" delay={100}>
-                <div className="bg-white border-l-4 border-[#0e6461] rounded-r-[10px] p-8 md:p-10 shadow-xs relative overflow-hidden">
-                  <div className="absolute top-6 right-8 text-6xl font-serif text-gray-100 select-none pointer-events-none">01</div>
-                  <span className="text-[#0e6461] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR VISION</span>
-                  <h3 className="heading-section text-xl md:text-2xl text-navy-900 font-extrabold mb-4 font-heading max-w-xl">
+                <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
+                  <div className="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none pointer-events-none">01</div>
+                  <span className="text-[#fce057] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR VISION</span>
+                  <h3 className="heading-section text-xl md:text-2xl text-white font-extrabold mb-4 font-heading max-w-xl">
                     Leading home-grown consulting that connects global standards with local expertise.
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-base">
+                  <p className="text-white/80 leading-relaxed text-base">
                     {vision}
                   </p>
                 </div>
@@ -235,77 +219,41 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values - Asymmetric Featured Grid */}
+      {/* Core Values - Uniform Grid */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            kicker="Core Values"
+            kicker="FEATURED PRINCIPLE"
             title="The principles that guide everything we do"
             subtitle="Deeply embedded values shaping our consulting practice and partnerships."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12">
-            {/* Featured Value Card (Integrity & Accountability) */}
-            <div className="lg:col-span-5 h-full">
-              {(() => {
-                const value = coreValues[0];
-                const Icon = iconMap[value.icon] || Shield;
-                return (
-                  <ScrollReveal variant="left" className="h-full">
-                    <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm relative overflow-hidden border border-white/5">
-                      {/* Blueprint grid design overlay */}
-                      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                          <path d="M0 20 H100 M0 40 H100 M0 60 H100 M0 80 H100" stroke="white" strokeWidth="0.5" />
-                          <path d="M20 0 V100 M40 0 V100 M60 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" />
-                        </svg>
+          <div className="flex flex-wrap justify-center gap-6 mt-12">
+            {coreValues.map((value, i) => {
+              const Icon = iconMap[value.icon] || Shield;
+              return (
+                <ScrollReveal
+                  key={value.title}
+                  delay={i * 80}
+                  variant="up"
+                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 flex flex-col"
+                >
+                  <div className="bg-gray-50/50 border border-gray-200 rounded-[10px] p-8 flex flex-col justify-between h-full card-hover-teal shadow-xs">
+                    <div>
+                      <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
+                        <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
                       </div>
-
-                      <div>
-                        <div className="w-14 h-14 rounded-[8px] bg-white/10 flex items-center justify-center mb-8 shadow-sm">
-                          <Icon className="text-[#fce057]" size={28} strokeWidth={1.5} />
-                        </div>
-                        <span className="text-[#fce057] text-xs font-mono tracking-[0.2em] block mb-2">FEATURED PRINCIPLE</span>
-                        <h3 className="text-white font-extrabold text-2xl mb-4 font-heading">
-                          {value.title}
-                        </h3>
-                        <p className="text-white/80 text-base leading-relaxed">
-                          {value.description}
-                        </p>
-                      </div>
-
-                      <div className="mt-12 text-white/40 text-xs font-mono">
-                        STELLAR ASSOCIATES &copy; 2026
-                      </div>
+                      <h3 className="text-navy-900 font-bold text-lg mb-3 font-heading">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {value.description}
+                      </p>
                     </div>
-                  </ScrollReveal>
-                );
-              })()}
-            </div>
-
-            {/* Other 4 Value Cards Grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {coreValues.slice(1).map((value, i) => {
-                const Icon = iconMap[value.icon] || Shield;
-                return (
-                  <ScrollReveal key={value.title} delay={i * 80} variant="right" className="h-full">
-                    <div className="bg-gray-50/50 border border-gray-200 rounded-[10px] p-8 flex flex-col justify-between h-full card-hover-teal shadow-xs">
-                      <div>
-                        <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
-                          <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
-                        </div>
-                        <h3 className="text-navy-900 font-bold text-lg mb-3 font-heading">
-                          {value.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -340,7 +288,7 @@ export default function AboutPage() {
                   <a
                     href="/stellar-profile.pdf"
                     download
-                    className="inline-flex items-center gap-2 bg-[#0e6461] hover:bg-[#0a504d] text-white font-semibold h-[48px] px-8 rounded-[10px] shadow-sm transition-all duration-[220ms] hover:translate-y-[-2px]"
+                    className="inline-flex items-center gap-2 bg-[#fce057] hover:bg-[#ebd04e] text-[#0c1b38] font-semibold h-[48px] px-8 rounded-[10px] shadow-sm transition-all duration-[220ms] hover:translate-y-[-2px]"
                   >
                     <Download size={16} strokeWidth={2} />
                     Download PDF

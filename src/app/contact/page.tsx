@@ -213,10 +213,9 @@ export default function ContactPage() {
                     <div className="flex justify-center">
                       <Button
                         type="submit"
-                        size="lg"
-                        className="w-full sm:w-auto bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm rounded-[6px] shadow-sm transition-colors duration-180 px-10"
+                        className="w-full sm:w-auto h-12 px-10 text-sm font-semibold rounded-[12px] bg-[#156E67] hover:bg-[#1C857D] text-white shadow-[0_4px_14px_rgba(21,110,103,0.15)] hover:shadow-[0_6px_20px_rgba(21,110,103,0.25)] hover:translate-y-[-2px] transition-all duration-[250ms] ease-in-out font-heading"
                       >
-                        <Send className="mr-2" size={18} strokeWidth={1.5} />
+                        <Send className="mr-2" size={16} strokeWidth={2} />
                         Send Message
                       </Button>
                     </div>

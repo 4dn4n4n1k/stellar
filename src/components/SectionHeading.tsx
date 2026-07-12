@@ -16,10 +16,10 @@ export default function SectionHeading({
   light = false,
 }: SectionHeadingProps) {
   return (
-    <ScrollReveal className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}>
+    <ScrollReveal className={`mb-10 md:mb-12 ${centered ? "text-center" : ""}`}>
       {kicker && (
         <span
-          className={`block text-xs md:text-sm font-bold tracking-[0.15em] uppercase mb-3 ${
+          className={`block text-[11px] font-bold tracking-[0.18em] uppercase mb-2.5 ${
             light ? "text-teal-100" : "text-teal-700"
           }`}
         >
@@ -27,7 +27,7 @@ export default function SectionHeading({
         </span>
       )}
       <h2
-        className={`heading-section text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 ${
+        className={`heading-section text-2xl md:text-3xl lg:text-[38px] leading-tight font-extrabold mb-3.5 ${
           light ? "text-white" : "text-gray-900"
         }`}
       >
@@ -35,7 +35,7 @@ export default function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`text-base md:text-lg max-w-2xl leading-relaxed ${centered ? "mx-auto" : ""} ${
+          className={`text-sm md:text-base max-w-2xl leading-relaxed ${centered ? "mx-auto" : ""} ${
             light ? "text-white/70" : "text-gray-600"
           }`}
         >
