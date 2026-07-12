@@ -61,7 +61,7 @@ export default function ExpertiseGlance() {
         </div>
 
         {/* Symmetric Grid: Exactly 3 boxes per line on tablet/desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {displayed.map((area, i) => {
             const Icon = iconMap[area.icon] || Landmark;
             const numStr = (i + 1).toString().padStart(2, "0");

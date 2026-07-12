@@ -62,7 +62,7 @@ export default function TeamPage() {
                 delay={i * 80}
                 className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] shrink-0 flex flex-col"
               >
-                <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-8 text-center card-hover-teal h-full shadow-xs flex flex-col justify-between">
+                <div className="bg-gray-50 border border-gray-200 rounded-[10px] p-6 sm:p-8 text-center card-hover-teal h-full shadow-xs flex flex-col justify-between">
                   <div>
                     {/* Premium Placeholder Photo */}
                     <div className="w-20 h-20 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm border border-teal-700/10">

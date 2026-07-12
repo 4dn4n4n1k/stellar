@@ -68,7 +68,7 @@ export default function PublicationsPage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-[6px] text-sm font-semibold transition-colors duration-180 border ${
+                  className={`h-12 md:h-auto md:py-2 px-4 rounded-[6px] text-sm font-semibold transition-colors duration-180 border flex items-center justify-center ${
                     activeCategory === cat
                       ? "bg-navy-900 text-white border-navy-900 shadow-sm"
                       : "bg-gray-50 text-gray-900 border-gray-200 hover:bg-gray-100"
@@ -98,9 +98,9 @@ export default function PublicationsPage() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="flex flex-wrap items-center gap-3 md:shrink-0">
                     <Badge
-                      variant="secondary"
+                       variant="secondary"
                       className="bg-teal-700/10 text-teal-700 border border-teal-700/20 text-xs shadow-none hover:bg-teal-700/15 font-semibold"
                     >
                       {pub.category}
@@ -110,10 +110,10 @@ export default function PublicationsPage() {
                       {pub.date}
                     </span>
                     <button
-                      className="w-8 h-8 rounded-[6px] bg-navy-900/5 hover:bg-navy-900 hover:text-white text-navy-900/50 flex items-center justify-center transition-colors duration-180"
+                      className="w-12 h-12 md:w-8 md:h-8 rounded-[6px] bg-navy-900/5 hover:bg-navy-900 hover:text-white text-navy-900/50 flex items-center justify-center transition-colors duration-180 focus-visible:ring-2 focus-visible:ring-[#156E67] focus-visible:outline-none"
                       title="Download (placeholder)"
                     >
-                      <Download size={14} strokeWidth={1.5} />
+                      <Download className="w-[16px] h-[16px] md:w-[14px] md:h-[14px]" strokeWidth={1.5} />
                     </button>
                   </div>
                 </div>

@@ -7,7 +7,7 @@ export default function ContactCTA() {
     <section className="py-12 md:py-14 bg-[#f7f8fa]">
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="bg-[#0C1B38] rounded-[20px] p-8 md:p-10 text-center shadow-lg relative overflow-hidden">
+          <div className="bg-[#0C1B38] rounded-[20px] p-6 sm:p-8 md:p-10 text-center shadow-lg relative overflow-hidden">
             {/* Background concentric pattern */}
             <svg
               className="absolute inset-y-0 right-0 w-[50%] h-full opacity-5 pointer-events-none"
@@ -41,16 +41,16 @@ export default function ContactCTA() {
                 Tell us about your program, evaluation, or policy question — we'll respond within two business days.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-heading">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-heading w-full max-w-sm mx-auto sm:max-w-none">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-[12px] bg-[#156E67] hover:bg-[#1C857D] text-white shadow-sm transition-all duration-180 hover:translate-y-[-1px]"
+                  className="inline-flex items-center justify-center w-full sm:w-auto h-12 px-8 text-sm font-semibold rounded-[12px] bg-[#156E67] hover:bg-[#1C857D] text-white shadow-sm transition-all duration-180 hover:translate-y-[-1px]"
                 >
                   Start a conversation
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-[12px] border border-white/20 text-white hover:bg-white/10 transition-all duration-180 hover:translate-y-[-1px]"
+                  className="inline-flex items-center justify-center w-full sm:w-auto h-12 px-8 text-sm font-semibold rounded-[12px] border border-white/20 text-white hover:bg-white/10 transition-all duration-180 hover:translate-y-[-1px]"
                 >
                   Explore our services
                 </Link>

@@ -59,8 +59,8 @@ export default function ServicesSnapshot() {
           </ScrollReveal>
         </div>
 
-        {/* Asymmetrical Staggered Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+        {/* Asymmetrical Staggered Editorial Layout (Visible only on lg and above) */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           
           {/* Left Column (No Offset) */}
           <div className="space-y-6 lg:space-y-8">
@@ -166,6 +166,58 @@ export default function ServicesSnapshot() {
             })}
           </div>
 
+        </div>
+
+        {/* Mobile/Tablet Sequential Layout (Visible below lg) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6">
+          {displayed.map((service, index) => {
+            if (!service) return null;
+            const Icon = iconMap[service.icon] || Search;
+            const numStr = (index + 1).toString().padStart(2, "0"); // 01, 02, 03, 04
+
+            return (
+              <ScrollReveal key={service.id} delay={index * 100} variant="up">
+                <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
+                  
+                  {/* Faint document numbering */}
+                  <span className="absolute top-6 right-6 text-xs font-bold tracking-widest text-gray-300 font-heading select-none">
+                    {numStr}
+                  </span>
+
+                  <div>
+                    {/* Outlined Icon Container */}
+                    <div className="w-10 h-10 rounded-[10px] bg-[#156E67]/8 group-hover:bg-[#156E67]/15 flex items-center justify-center mb-4 transition-colors duration-300">
+                      <Icon className="text-[#156E67]" size={20} strokeWidth={1.5} />
+                    </div>
+
+                    <h3 className="text-[#0C1B38] font-extrabold text-xl sm:text-[22px] mb-2 font-heading tracking-tight leading-snug">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4 max-w-[480px]">
+                      {service.description}
+                    </p>
+
+                    <div className="w-full h-px bg-gray-100 my-4" />
+
+                    {/* Capabilities Bullet List */}
+                    <ul className="space-y-2.5 mb-2">
+                      {service.items.slice(0, 4).map((item) => (
+                        <li key={item} className="text-gray-700 text-sm flex items-center gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#156E67] shrink-0" />
+                          <span className="font-medium">{item}</span>
+                        </li>
+                      ))}
+                      {service.items.length > 4 && (
+                        <li className="text-[#156E67] text-xs font-semibold uppercase tracking-wider pl-4.5 pt-1.5">
+                          + {service.items.length - 4} More Capabilities
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Action button */}

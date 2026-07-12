@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -10,6 +10,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,65 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Lock scroll, manage escape listener, and focus trap when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+
+      // Focus first focusable element inside the drawer
+      const focusable = menuRef.current?.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable && focusable.length > 0) {
+        (focusable[0] as HTMLElement).focus();
+      }
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setIsOpen(false);
+          return;
+        }
+
+        if (e.key === "Tab") {
+          if (!menuRef.current) return;
+          const focusableList = Array.from(
+            menuRef.current.querySelectorAll(
+              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )
+          ) as HTMLElement[];
+
+          if (focusableList.length === 0) return;
+
+          const firstEl = focusableList[0];
+          const lastEl = focusableList[focusableList.length - 1];
+
+          if (e.shiftKey) {
+            // Shift + Tab
+            if (document.activeElement === firstEl) {
+              lastEl.focus();
+              e.preventDefault();
+            }
+          } else {
+            // Tab
+            if (document.activeElement === lastEl) {
+              firstEl.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      };
+
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    } else {
+      // Return focus to menu trigger when closed
+      triggerRef.current?.focus();
+    }
+  }, [isOpen]);
+
   // Dynamic styles for smooth glassmorphism transition on scroll
   const navStyle = {
     backgroundColor: scrolled ? "rgba(255, 255, 255, 0.70)" : "rgba(12, 27, 56, 0)",
@@ -37,8 +98,8 @@ export default function Navbar() {
       {/* Seamless Transitioning Navbar Container */}
       <div
         style={navStyle}
-        className={`fixed left-1/2 -translate-x-1/2 z-50 h-[64px] flex items-center justify-between px-6 md:px-8 border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled
-            ? "top-[20px] md:top-[24px] w-[85%] max-w-[1200px] rounded-full shadow-[0_8px_32px_rgba(12,27,56,0.08),0_2px_8px_rgba(12,27,56,0.04)]"
+        className={`fixed left-1/2 -translate-x-1/2 z-50 h-[64px] flex items-center justify-between px-4 md:px-8 border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled
+            ? "top-[20px] md:top-[24px] w-[92%] sm:w-[85%] max-w-[1200px] rounded-full shadow-[0_8px_32px_rgba(12,27,56,0.08),0_2px_8px_rgba(12,27,56,0.04)]"
             : "top-0 w-full rounded-none shadow-none"
           }`}
       >
@@ -99,8 +160,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Button (Hamburger) */}
           <button
+            ref={triggerRef}
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 rounded-full transition-colors duration-180 shrink-0 ${
+            aria-expanded={isOpen}
+            className={`lg:hidden p-3 rounded-full transition-colors duration-180 shrink-0 focus-visible:ring-2 focus-visible:ring-[#156E67] focus-visible:outline-none ${
               scrolled
                 ? "text-[#0C1B38] hover:bg-[#0C1B38]/10"
                 : "text-white hover:bg-white/10"
@@ -114,6 +177,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       <div
+        inert={!isOpen ? true : undefined}
         className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
@@ -125,6 +189,7 @@ export default function Navbar() {
 
         {/* Sidebar drawer */}
         <div
+          ref={menuRef}
           className={`absolute right-0 top-0 h-full w-72 bg-[#0C1B38] border-l border-white/10 shadow-2xl p-6 flex flex-col justify-between transform transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
@@ -135,7 +200,8 @@ export default function Navbar() {
               </span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white/80 hover:text-white p-1 hover:bg-white/10 rounded-full transition-colors"
+                aria-label="Close menu"
+                className="text-white/80 hover:text-white p-3 hover:bg-white/10 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               >
                 <X size={24} />
               </button>
@@ -152,7 +218,8 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-4 py-3 text-base font-semibold rounded-xl transition-all duration-200 ${isActive
+                    onClick={() => setIsOpen(false)}
+                    className={`px-4 py-3 text-base font-semibold rounded-xl transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#fce057] focus-visible:outline-none ${isActive
                         ? "text-[#fce057] bg-white/5 border-l-4 border-[#fce057]"
                         : "text-white/80 hover:text-white hover:bg-white/5"
                       }`}
@@ -170,7 +237,8 @@ export default function Navbar() {
               {/* Mobile Contact CTA Button */}
               <Link
                 href="/contact"
-                className="mt-4 mx-4 inline-flex items-center justify-center h-11 text-sm font-semibold rounded-xl bg-[#fce057] hover:bg-[#ebd046] text-[#0c1b38] transition-all duration-[200ms] ease-in-out font-heading"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 mx-4 inline-flex items-center justify-center h-11 text-sm font-semibold rounded-xl bg-[#fce057] hover:bg-[#ebd046] text-[#0c1b38] transition-all duration-[200ms] ease-in-out font-heading focus-visible:ring-2 focus-visible:ring-[#fce057] focus-visible:outline-none"
                 style={{
                   transitionDelay: isOpen ? `${navLinks.length * 30}ms` : "0ms",
                   transform: isOpen ? "translateX(0)" : "translateX(12px)",

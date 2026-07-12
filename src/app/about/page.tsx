@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story - Editorial Composition */}
-      <section className="py-20 md:py-28 bg-white overflow-hidden">
+      <section className="py-14 md:py-24 bg-white overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Narrative Block 1: Paragraph Left / Quote Right */}
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </ScrollReveal>
             </div>
 
-            <div className="lg:col-span-5 bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 relative overflow-hidden shadow-sm border border-white/5">
+            <div className="lg:col-span-5 bg-[#0c1b38] text-white rounded-[10px] p-6 sm:p-8 md:p-10 relative overflow-hidden shadow-sm border border-white/5">
               <ScrollReveal variant="right" delay={150}>
                 {/* Subtle blueprint line overlay */}
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
@@ -167,7 +167,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission - Staggered Asymmetric Editorial Layout */}
-      <section className="py-20 md:py-28 bg-gray-50 border-t border-b border-gray-200">
+      <section className="py-14 md:py-24 bg-gray-50 border-t border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
@@ -188,7 +188,7 @@ export default function AboutPage() {
             <div className="lg:col-span-8 space-y-12">
               {/* Vision Card */}
               <ScrollReveal variant="right" delay={100}>
-                <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
+                <div className="bg-[#0c1b38] text-white rounded-[10px] p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
                   <div className="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none pointer-events-none">01</div>
                   <span className="text-[#fce057] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR VISION</span>
                   <h3 className="heading-section text-xl md:text-2xl text-white font-extrabold mb-4 font-heading max-w-xl">
@@ -202,7 +202,7 @@ export default function AboutPage() {
               
               {/* Mission Card */}
               <ScrollReveal variant="right" delay={200}>
-                <div className="bg-[#0c1b38] text-white rounded-[10px] p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
+                <div className="bg-[#0c1b38] text-white rounded-[10px] p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden border border-white/5">
                   <div className="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none pointer-events-none">02</div>
                   <span className="text-[#fce057] font-bold text-xs uppercase tracking-[0.15em] block mb-3">OUR MISSION</span>
                   <h3 className="heading-section text-xl md:text-2xl text-white font-extrabold mb-4 font-heading max-w-xl">
@@ -220,7 +220,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values - Uniform Grid */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-14 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="FEATURED PRINCIPLE"
@@ -238,7 +238,7 @@ export default function AboutPage() {
                   variant="up"
                   className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 flex flex-col"
                 >
-                  <div className="bg-gray-50/50 border border-gray-200 rounded-[10px] p-8 flex flex-col justify-between h-full card-hover-teal shadow-xs">
+                  <div className="bg-gray-50/50 border border-gray-200 rounded-[10px] p-6 sm:p-8 flex flex-col justify-between h-full card-hover-teal shadow-xs">
                     <div>
                       <div className="w-12 h-12 rounded-[6px] bg-navy-900 flex items-center justify-center mb-6 shadow-sm">
                         <Icon className="text-teal-100" size={22} strokeWidth={1.5} />
@@ -259,7 +259,7 @@ export default function AboutPage() {
       </section>
 
       {/* Download Profile Card - Mockup Styled (Only Kicker, Title, Subtitle, and Primary Button - Compact Size) */}
-      <section className="py-20 bg-gray-50 border-t border-gray-200">
+      <section className="py-14 md:py-20 bg-gray-50 border-t border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto bg-[#0c1b38] border border-white/5 rounded-[24px] py-12 px-6 md:py-16 md:px-12 text-center relative overflow-hidden shadow-lg">

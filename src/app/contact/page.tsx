@@ -115,7 +115,7 @@ export default function ContactPage() {
                           message: "",
                         });
                       }}
-                      className="mt-6 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded-[6px]"
+                      className="mt-6 w-full sm:w-auto h-12 lg:h-8 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded-[6px] focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:outline-none"
                     >
                       Send Another Message
                     </Button>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                           value={formState.name}
                           onChange={handleChange}
                           placeholder="Your full name"
-                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.name ? "border-red-400" : ""
+                          className={`h-12 lg:h-8 bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.name ? "border-red-400" : ""
                             }`}
                         />
                         {errors.name && (
@@ -158,7 +158,7 @@ export default function ContactPage() {
                           value={formState.email}
                           onChange={handleChange}
                           placeholder="your@email.com"
-                          className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.email ? "border-red-400" : ""
+                          className={`h-12 lg:h-8 bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.email ? "border-red-400" : ""
                             }`}
                         />
                         {errors.email && (
@@ -179,7 +179,7 @@ export default function ContactPage() {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="How can we help?"
-                        className={`bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.subject ? "border-red-400" : ""
+                        className={`h-12 lg:h-8 bg-gray-50 border-gray-200 focus-visible:ring-teal-700 focus-visible:border-teal-700 rounded-[6px] ${errors.subject ? "border-red-400" : ""
                           }`}
                       />
                       {errors.subject && (
