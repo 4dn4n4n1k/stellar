@@ -38,12 +38,12 @@ export default function WhyStellar() {
               Why Stellar
             </p>
           </ScrollReveal>
-          <ScrollReveal variant="up" delay={100}>
+          <ScrollReveal variant="up" delay={50}>
             <h2 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] lg:leading-[1.1] text-[#0C1B38] font-extrabold mb-6 font-heading tracking-tight max-w-[850px] mx-auto">
               Why Stellar Associates
             </h2>
           </ScrollReveal>
-          <ScrollReveal variant="up" delay={200}>
+          <ScrollReveal variant="up" delay={100}>
             <p className="text-gray-500 text-[17px] leading-[1.7] max-w-[600px] mx-auto">
               What sets us apart in the development consultancy landscape.
             </p>
@@ -54,7 +54,7 @@ export default function WhyStellar() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 items-stretch">
           
           {/* Card 1: Deep Sector Expertise */}
-          <ScrollReveal delay={100} className="h-full">
+          <ScrollReveal delay={50} className="h-full">
             <div className="group relative bg-white border border-gray-200/50 rounded-[22px] p-6 lg:p-7 shadow-[0_15px_40px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between h-full overflow-hidden">
               {/* Decorative governance network SVG in bottom right */}
               <div className="absolute bottom-4 right-4 w-[160px] h-[160px] opacity-[0.03] group-hover:opacity-[0.06] group-hover:scale-105 transition-all duration-500 pointer-events-none select-none">
@@ -84,7 +84,7 @@ export default function WhyStellar() {
           </ScrollReveal>
 
           {/* Card 2: Strong Field Presence */}
-          <ScrollReveal delay={200} className="h-full">
+          <ScrollReveal delay={100} className="h-full">
             <div className="group relative bg-white border border-gray-200/50 rounded-[22px] p-6 lg:p-7 shadow-[0_15px_40px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between h-full overflow-hidden">
               {/* Decorative map coordinate SVG overlay */}
               <div className="absolute bottom-4 right-4 w-[120px] h-[120px] opacity-[0.04] group-hover:opacity-[0.08] transition-all duration-500 pointer-events-none select-none">
@@ -112,7 +112,7 @@ export default function WhyStellar() {
           </ScrollReveal>
 
           {/* Card 3: Evidence-Based Approaches */}
-          <ScrollReveal delay={150} className="h-full">
+          <ScrollReveal delay={75} className="h-full">
             <div className="group relative bg-white border border-gray-200/50 rounded-[22px] p-6 lg:p-7 shadow-[0_15px_40px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between h-full overflow-hidden">
               {/* Decorative charts graphics overlay */}
               <div className="absolute bottom-6 right-6 w-[120px] h-[80px] opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-500 pointer-events-none select-none">
@@ -139,7 +139,7 @@ export default function WhyStellar() {
           </ScrollReveal>
 
           {/* Card 4: International Quality Standards */}
-          <ScrollReveal delay={250} className="h-full">
+          <ScrollReveal delay={125} className="h-full">
             <div className="group relative bg-white border border-gray-200/50 rounded-[22px] p-6 lg:p-7 shadow-[0_15px_40px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between h-full overflow-hidden">
               {/* Decorative document badge SVG overlay */}
               <div className="absolute bottom-4 right-4 w-[150px] h-[150px] opacity-[0.03] group-hover:opacity-[0.06] group-hover:rotate-12 transition-all duration-500 pointer-events-none select-none">

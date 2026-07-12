@@ -47,12 +47,12 @@ export default function ServicesSnapshot() {
               Our Services
             </p>
           </ScrollReveal>
-          <ScrollReveal variant="up" delay={100}>
+          <ScrollReveal variant="up" delay={50}>
             <h2 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] lg:leading-[1.1] text-[#0C1B38] font-extrabold mb-6 font-heading tracking-tight max-w-[800px] mx-auto">
               Comprehensive Development Solutions
             </h2>
           </ScrollReveal>
-          <ScrollReveal variant="up" delay={200}>
+          <ScrollReveal variant="up" delay={100}>
             <p className="text-gray-500 text-[17px] leading-[1.7] max-w-[620px] mx-auto">
               Tailored consulting, research, and advisory services for development partners.
             </p>
@@ -70,7 +70,7 @@ export default function ServicesSnapshot() {
               const numStr = (index * 2 + 1).toString().padStart(2, "0"); // 01, 03
 
               return (
-                <ScrollReveal key={service.id} delay={index * 120} variant="up">
+                <ScrollReveal key={service.id} delay={index * 60} variant="up">
                   <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 lg:p-7 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
                     
                     {/* Faint document numbering */}
@@ -122,7 +122,7 @@ export default function ServicesSnapshot() {
               const numStr = (index * 2 + 2).toString().padStart(2, "0"); // 02, 04
 
               return (
-                <ScrollReveal key={service.id} delay={index * 120 + 60} variant="up">
+                <ScrollReveal key={service.id} delay={index * 60 + 30} variant="up">
                   <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 lg:p-7 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
                     
                     {/* Faint document numbering */}
@@ -176,7 +176,7 @@ export default function ServicesSnapshot() {
             const numStr = (index + 1).toString().padStart(2, "0"); // 01, 02, 03, 04
 
             return (
-              <ScrollReveal key={service.id} delay={index * 100} variant="up">
+              <ScrollReveal key={service.id} delay={index * 50} variant="up">
                 <div className="group relative bg-white border border-gray-200/50 rounded-[18px] p-6 shadow-[0_10px_35px_rgba(12,27,56,0.02)] hover:shadow-[0_20px_50px_rgba(12,27,56,0.06)] hover:-translate-y-1.5 hover:border-[#156E67]/30 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden">
                   
                   {/* Faint document numbering */}
