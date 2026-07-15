@@ -94,17 +94,17 @@ export default function HeroSection() {
           style={{ animationDelay: "420ms" }}
         >
           <Link
-            href="/services"
-            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-[#fce057] hover:bg-[#f5d630] text-[#0c1b38] border-0 transition-all duration-[200ms] ease-in-out font-heading shadow-sm"
-          >
-            Our Services
-            <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
-          </Link>
-          <Link
             href="/about"
             className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-transparent text-white border border-white/25 hover:bg-white/6 hover:border-white/45 transition-all duration-[200ms] ease-in-out font-heading"
           >
             About Us
+            <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            href="/services"
+            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-[#fce057] hover:bg-[#f5d630] text-[#0c1b38] border-0 transition-all duration-[200ms] ease-in-out font-heading shadow-sm"
+          >
+            Our Services
             <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
           </Link>
         </div>
