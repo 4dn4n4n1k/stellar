@@ -70,13 +70,13 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(44px, 13vw, 56px)", animationDelay: "40ms" }}
         >
           <span className="block">
-            Evidence<span className="text-[#38c9b0]">.</span>
+            Evidence.
           </span>
           <span className="block" style={{ animationDelay: "140ms" }}>
-            Insight<span className="text-[#38c9b0]">.</span>
+            Insight.
           </span>
           <span className="block" style={{ animationDelay: "240ms" }}>
-            Impact<span className="text-[#fce057]">.</span>
+            Impact.
           </span>
         </h1>
 
@@ -95,7 +95,7 @@ export default function HeroSection() {
         >
           <Link
             href="/about"
-            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-transparent text-white border border-white/25 hover:bg-white/6 hover:border-white/45 transition-all duration-[200ms] ease-in-out font-heading"
+            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-[#156E67] hover:bg-[#1C857D] text-white border-0 transition-all duration-[200ms] ease-in-out font-heading shadow-sm"
           >
             About Us
             <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
