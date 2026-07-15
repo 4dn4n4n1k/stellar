@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[640px] md:min-h-screen py-20 md:py-0 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] md:min-h-screen py-20 md:py-0 flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0 transform-gpu pointer-events-none select-none">
         <picture className="block w-full h-full">
