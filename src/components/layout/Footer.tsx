@@ -7,10 +7,18 @@ import {
   MapPin,
   Download,
 } from "lucide-react";
+import MobileFooter from "@/components/layout/MobileFooter";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-white border-t border-white/5">
+    <>
+      {/* Mobile Footer (≤767px) */}
+      <div className="md:hidden">
+        <MobileFooter />
+      </div>
+
+      {/* Desktop / Tablet Footer (≥768px) */}
+      <footer className="hidden md:block bg-navy-950 text-white border-t border-white/5">
       {/* Main Footer */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-8">
@@ -223,5 +231,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
