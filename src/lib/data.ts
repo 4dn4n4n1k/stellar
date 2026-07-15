@@ -100,7 +100,7 @@ export const expertiseAreas = [
   },
   {
     title: "Youth & Gender Inclusion",
-    icon: "UsersRound",
+    icon: "Users",
     shortDesc: "Fostering inclusive development for youth and women.",
     fullDesc:
       "We champion gender equality, youth empowerment, and disability inclusion across all development sectors. Our gender-responsive approaches integrate intersectional analysis into program design, monitoring, and evaluation. We develop leadership programs for young people and women, ensuring their meaningful participation in governance, economic development, and civic life through evidence-based interventions.",
