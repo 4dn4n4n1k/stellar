@@ -16,7 +16,7 @@ export default function MobileFooter() {
       <div className="flex items-center gap-4 mb-10">
         <Link href="/" className="shrink-0">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Stellar Associates Logo"
             width={64}
             height={64}
@@ -192,11 +192,8 @@ export default function MobileFooter() {
 
       {/* Section 6 — Copyright */}
       <div className="text-center">
-        <p className="text-white/35 text-[12px] mb-1.5">
+        <p className="text-white/35 text-[12px]">
           © {siteConfig.founded} Stellar Associates
-        </p>
-        <p className="text-white/25 text-[11px] tracking-wide">
-          Evidence <span className="text-white/20">•</span> Insight <span className="text-white/20">•</span> Impact
         </p>
       </div>
     </footer>

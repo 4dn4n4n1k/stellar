@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-4 mb-6 group">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Stellar Associates Logo"
                 width={72}
                 height={72}

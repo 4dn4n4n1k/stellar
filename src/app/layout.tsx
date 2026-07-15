@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     "USAID",
     "capacity building",
   ],
+};
+
+export const viewport: Viewport = {
+  // Do NOT set width=device-width — omitting it lets mobile browsers
+  // honour their own "Desktop mode" and render the full desktop layout.
+  // The site remains responsive via CSS breakpoints as normal.
+  initialScale: 1,
+  minimumScale: 1,
 };
 
 export default function RootLayout({

@@ -8,10 +8,10 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 transform-gpu pointer-events-none select-none">
         <picture className="block w-full h-full">
-          <source media="(min-width: 1025px)" srcSet="/hero-desktop.jpeg" />
-          <source media="(min-width: 768px)" srcSet="/hero-tablet.jpeg" />
+          <source media="(min-width: 1025px)" srcSet="/hero-desktop.webp" />
+          <source media="(min-width: 768px)" srcSet="/hero-tablet.webp" />
           <img
-            src="/hero-mobile.jpeg"
+            src="/hero-mobile.webp"
             alt="Stellar Associates research and consulting hero background"
             className="w-full h-full object-cover object-center"
             fetchPriority="high"
