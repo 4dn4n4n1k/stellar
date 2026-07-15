@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -20,22 +20,29 @@ export default function HeroSection() {
         </picture>
       </div>
 
-      {/* Dark overlay for text readability - lighter on mobile to keep original colors */}
-      <div className="absolute inset-0 bg-black/15 md:bg-black/25 z-[1]" />
+      {/* Overlay — desktop/tablet unchanged, mobile uses a subtle left-side gradient */}
+      <div className="absolute inset-0 z-[1] md:bg-black/25 hidden md:block" />
+      <div
+        className="absolute inset-0 z-[1] md:hidden"
+        style={{
+          background:
+            "linear-gradient(105deg, rgba(5,15,35,0.82) 0%, rgba(5,15,35,0.62) 55%, rgba(5,15,35,0.15) 100%)",
+        }}
+      />
 
       {/* Desktop/Tablet Hero Content (Unchanged) */}
       <div className="relative z-10 hidden md:block max-w-[680px] lg:max-w-[900px] mx-auto px-4 text-center mt-2 md:mt-4">
         <h1 className="heading-display text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 tracking-tight text-white drop-shadow-lg leading-tight text-center">
-          <span className="block sm:inline-block animate-fade-slide-up mr-0 sm:mr-5" style={{ animationDelay: '50ms' }}>Evidence. Insight.</span>
-          <span className="block sm:inline-block animate-fade-slide-up mt-2 sm:mt-0" style={{ animationDelay: '180ms' }}>Impact.</span>
+          <span className="block sm:inline-block animate-fade-slide-up mr-0 sm:mr-5" style={{ animationDelay: "50ms" }}>Evidence. Insight.</span>
+          <span className="block sm:inline-block animate-fade-slide-up mt-2 sm:mt-0" style={{ animationDelay: "180ms" }}>Impact.</span>
         </h1>
 
-        <p className="text-white/85 text-base md:text-lg max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md animate-fade-slide-up" style={{ animationDelay: '260ms' }}>
+        <p className="text-white/85 text-base md:text-lg max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md animate-fade-slide-up" style={{ animationDelay: "260ms" }}>
           Supporting governments, donors, civil society, and private sector partners through research,
           <br className="hidden md:inline" /> evaluation, governance, and strategic advisory services.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-[18px] justify-center items-center animate-fade-slide-up font-heading w-full max-w-md mx-auto sm:max-w-none" style={{ animationDelay: '340ms' }}>
+        <div className="flex flex-col sm:flex-row gap-[18px] justify-center items-center animate-fade-slide-up font-heading w-full max-w-md mx-auto sm:max-w-none" style={{ animationDelay: "340ms" }}>
           <Link
             href="/about"
             className="inline-flex items-center justify-center w-full sm:w-auto h-12 lg:h-[46px] px-[28px] text-[15px] font-semibold rounded-[10px] bg-transparent text-white border border-[rgba(255,255,255,0.28)] hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.55)] hover:translate-y-[-2px] transition-all duration-[220ms] ease-in-out"
@@ -57,62 +64,56 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Dedicated Mobile Hero Content (≤767px) */}
-      <div className="relative z-10 flex md:hidden flex-col items-center justify-center text-center px-6 w-full max-w-[480px] mx-auto mt-2">
-        {/* Headline */}
-        <h1 className="heading-display text-[48px] font-black text-white drop-shadow-lg leading-[0.95] text-center flex flex-col mb-[32px]">
-          <span className="block animate-fade-slide-up" style={{ animationDelay: '50ms' }}>Evidence.</span>
-          <span className="block animate-fade-slide-up" style={{ animationDelay: '180ms' }}>Insight.</span>
-          <span className="block animate-fade-slide-up" style={{ animationDelay: '300ms' }}>Impact.</span>
+      {/* ── Dedicated Mobile Hero Content (≤767px) ── */}
+      <div className="relative z-10 flex md:hidden flex-col items-start justify-center w-full px-6 max-w-[420px] self-center">
+        {/* Headline — left-aligned, stacked, very large, with coloured accent dots */}
+        <h1
+          className="heading-display font-black text-white leading-[1.0] mb-6 animate-fade-slide-up"
+          style={{ fontSize: "clamp(44px, 13vw, 56px)", animationDelay: "40ms" }}
+        >
+          <span className="block">
+            Evidence<span className="text-[#38c9b0]">.</span>
+          </span>
+          <span className="block" style={{ animationDelay: "140ms" }}>
+            Insight<span className="text-[#38c9b0]">.</span>
+          </span>
+          <span className="block" style={{ animationDelay: "240ms" }}>
+            Impact<span className="text-[#fce057]">.</span>
+          </span>
         </h1>
 
-        {/* Supporting paragraph */}
-        <p className="text-white/70 text-[16px] leading-relaxed max-w-[285px] mx-auto mb-[36px] drop-shadow-md animate-fade-slide-up text-center" style={{ animationDelay: '380ms' }}>
-          Supporting governments, donors, civil society, and private sector partners through research, evaluation, governance, and strategic advisory services.
+        {/* Supporting paragraph — left-aligned, comfortable width */}
+        <p
+          className="text-white/75 text-[15px] leading-[1.65] mb-8 animate-fade-slide-up max-w-[300px]"
+          style={{ animationDelay: "320ms" }}
+        >
+          Supporting governments, donors, civil society, and private sector
+          partners through research, evaluation, governance, and strategic
+          advisory services.
         </p>
 
         {/* Stacked CTA Buttons */}
-        <div className="flex flex-col gap-[16px] w-full max-w-[290px] mx-auto mb-[40px] animate-fade-slide-up" style={{ animationDelay: '460ms' }}>
+        <div
+          className="flex flex-col gap-[14px] w-full max-w-[300px] animate-fade-slide-up"
+          style={{ animationDelay: "420ms" }}
+        >
+          {/* Primary — filled yellow */}
           <Link
             href="/services"
-            className="group inline-flex items-center justify-center w-full h-[50px] text-[15px] font-semibold rounded-[10px] bg-[#fce057] hover:bg-[#ebd046] text-[#0c1b38] border-0 transition-all duration-[220ms] ease-in-out font-heading shadow-md"
+            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-[#fce057] hover:bg-[#f5d630] text-[#0c1b38] border-0 transition-all duration-[200ms] ease-in-out font-heading shadow-sm"
           >
             Our Services
-            <ArrowRight size={16} className="ml-2 transition-transform duration-[200ms] group-hover:translate-x-0.5" />
+            <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
           </Link>
+
+          {/* Secondary — transparent with thin border */}
           <Link
             href="/about"
-            className="group inline-flex items-center justify-center w-full h-[50px] text-[15px] font-semibold rounded-[10px] bg-transparent text-white border border-[#156E67] hover:bg-[#156E67]/10 transition-all duration-[220ms] ease-in-out font-heading"
+            className="group inline-flex items-center justify-between w-full h-[50px] px-5 text-[15px] font-semibold rounded-[10px] bg-transparent text-white border border-white/25 hover:bg-white/6 hover:border-white/45 transition-all duration-[200ms] ease-in-out font-heading"
           >
             About Us
-            <ArrowRight size={16} className="ml-2 transition-transform duration-[200ms] group-hover:translate-x-0.5" />
+            <ArrowRight size={17} className="transition-transform duration-[180ms] group-hover:translate-x-0.5" />
           </Link>
-        </div>
-
-        {/* Trust/Credibility Section */}
-        <div className="mb-[48px] text-center w-full animate-fade-slide-up" style={{ animationDelay: '520ms' }}>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-white/35 font-bold mb-3">
-            Trusted by professionals working with
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] font-extrabold tracking-widest text-white/45 uppercase font-heading">
-            <span>USAID</span>
-            <span>United Nations</span>
-            <span>GIZ</span>
-            <span>European Union</span>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="flex flex-col items-center gap-1.5 animate-fade-slide-up" style={{ animationDelay: '580ms' }}>
-          {/* Mouse Icon */}
-          <div className="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-white/50 rounded-full animate-bounce" />
-          </div>
-          {/* Explore text and chevron */}
-          <div className="flex flex-col items-center gap-0.5 opacity-40 text-white">
-            <span className="text-[9px] uppercase tracking-[0.25em] font-bold font-heading">Explore</span>
-            <ChevronDown size={14} className="animate-pulse" />
-          </div>
         </div>
       </div>
     </section>
