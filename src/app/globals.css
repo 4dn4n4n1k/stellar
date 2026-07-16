@@ -211,111 +211,7 @@
   line-height: 1.2;
 }
 
-/* ============================================================
-   Teal Gradient Accent — Logo Arc Motif
-   ============================================================ */
 
-.teal-gradient-text {
-  background: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.teal-gradient-border {
-  border-image: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C) 1;
-}
-
-.teal-underline {
-  position: relative;
-}
-
-.teal-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #1F7A8C, #2A9DB0);
-  border-radius: 2px;
-}
-
-/* ============================================================
-   Section Divider — Teal Arc
-   ============================================================ */
-
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      #1F7A8C33 20%,
-      #1F7A8C66 50%,
-      #1F7A8C33 80%,
-      transparent 100%);
-}
-
-/* ============================================================
-   Glassmorphism
-   ============================================================ */
-
-.glass-nav {
-  background: rgba(11, 29, 58, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(31, 122, 140, 0.15);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* ============================================================
-   Card Hover Effects
-   ============================================================ */
-
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 20px 40px rgba(11, 29, 58, 0.12),
-    0 0 0 1px rgba(31, 122, 140, 0.2);
-}
-
-.card-hover-teal {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-hover-teal::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, transparent, #1F7A8C40, transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card-hover-teal:hover::before {
-  opacity: 1;
-}
-
-.card-hover-teal:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(11, 29, 58, 0.1);
-}
 
 /* ============================================================
    Scroll Reveal Animations
@@ -365,54 +261,6 @@
   transform: scale(1);
 }
 
-/* ============================================================
-   Particle Canvas
-   ============================================================ */
-
-.hero-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-
-/* ============================================================
-   Scroll to Top Button
-   ============================================================ */
-
-.scroll-top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 50;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1F7A8C, #2A9DB0);
-  color: #0B1D3A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(31, 122, 140, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-}
-
-.scroll-top-btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.scroll-top-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 30px rgba(31, 122, 140, 0.5);
-}
 
 /* ============================================================
    Page Transition
@@ -422,36 +270,6 @@
   /* Removed page transition animation to eliminate visual flashing/flickering between pages */
 }
 
-/* ============================================================
-   Hero Teal Arcs (Logo Motif)
-   ============================================================ */
-
-.hero-arc {
-  position: absolute;
-  border: 2px solid rgba(31, 122, 140, 0.15);
-  border-radius: 50%;
-  animation: arcFloat 20s ease-in-out infinite;
-}
-
-@keyframes arcFloat {
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(10px, -10px) rotate(2deg);
-  }
-
-  50% {
-    transform: translate(-5px, 5px) rotate(-1deg);
-  }
-
-  75% {
-    transform: translate(5px, 10px) rotate(1deg);
-  }
-}
 
 /* ============================================================
    Stat Counter Pulse
@@ -466,61 +284,6 @@
   background-clip: text;
 }
 
-/* ============================================================
-   Service Tab Indicator
-   ============================================================ */
-
-.service-tab-active {
-  position: relative;
-}
-
-.service-tab-active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #1F7A8C, #2A9DB0);
-}
-
-/* ============================================================
-   Team Photo Placeholder
-   ============================================================ */
-
-.team-photo-placeholder {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #12355B, #1F7A8C);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.team-photo-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1F7A8C, #2A9DB0, #1F7A8C);
-  z-index: -1;
-}
-
-/* ============================================================
-   Publication Card
-   ============================================================ */
-
-.pub-card {
-  border-left: 3px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.pub-card:hover {
-  border-left-color: #1F7A8C;
-  background: #F5F7FA;
-}
 
 /* ============================================================
    Responsive Utilities
@@ -529,11 +292,6 @@
 @media (max-width: 768px) {
   .heading-display {
     font-size: 2rem;
-  }
-
-  .team-photo-placeholder {
-    width: 120px;
-    height: 120px;
   }
 }
 

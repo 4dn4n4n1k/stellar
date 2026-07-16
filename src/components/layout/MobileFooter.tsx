@@ -53,7 +53,7 @@ export default function MobileFooter() {
           <p className="text-white/40 text-[12px]">PDF • 3 MB</p>
         </div>
         {/* Arrow */}
-        <ArrowRight size={18} className="text-[#38c9b0] shrink-0 transition-transform duration-[180ms] group-hover:translate-x-0.5" />
+        <ArrowRight size={18} className="text-[#fce057] shrink-0 transition-transform duration-[180ms] group-hover:translate-x-0.5" />
       </a>
 
       {/* Section 3 — Follow Us */}
@@ -119,14 +119,14 @@ export default function MobileFooter() {
         <p className="text-white font-semibold text-[15px] font-heading mb-4">Contact</p>
         <div className="flex flex-col gap-3">
           <div className="flex items-start gap-3">
-            <MapPin size={15} className="text-[#38c9b0] shrink-0 mt-0.5" />
+            <MapPin size={15} className="text-[#fce057] shrink-0 mt-0.5" />
             <span className="text-white/60 text-[13px] leading-snug">Dhaka, Bangladesh</span>
           </div>
           <a
             href={`mailto:${siteConfig.email}`}
             className="flex items-center gap-3 group"
           >
-            <Mail size={15} className="text-[#38c9b0] shrink-0" />
+            <Mail size={15} className="text-[#fce057] shrink-0" />
             <span className="text-white/60 text-[13px] group-hover:text-white transition-colors duration-[150ms]">
               {siteConfig.email}
             </span>
@@ -135,7 +135,7 @@ export default function MobileFooter() {
             href={`tel:${siteConfig.phones[0]}`}
             className="flex items-center gap-3 group"
           >
-            <Phone size={15} className="text-[#38c9b0] shrink-0" />
+            <Phone size={15} className="text-[#fce057] shrink-0" />
             <span className="text-white/60 text-[13px] group-hover:text-white transition-colors duration-[150ms]">
               {siteConfig.phones[0]}
             </span>
@@ -154,7 +154,7 @@ export default function MobileFooter() {
           className="w-full flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38c9b0]"
         >
           <div className="flex items-center gap-3">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#38c9b0] fill-none stroke-current" strokeWidth={1.8}>
+            <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#fce057] fill-none stroke-current" strokeWidth={1.8}>
               <rect x="3" y="3" width="7" height="7" rx="1.5" />
               <rect x="14" y="3" width="7" height="7" rx="1.5" />
               <rect x="3" y="14" width="7" height="7" rx="1.5" />
@@ -164,7 +164,7 @@ export default function MobileFooter() {
           </div>
           <ChevronDown
             size={18}
-            className={`text-[#38c9b0] transition-transform duration-[250ms] ${linksOpen ? "rotate-180" : ""}`}
+            className={`text-[#fce057] transition-transform duration-[250ms] ${linksOpen ? "rotate-180" : ""}`}
           />
         </button>
 

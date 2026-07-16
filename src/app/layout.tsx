@@ -17,6 +17,9 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+// Set NEXT_PUBLIC_SITE_URL in your .env.local (or hosting env vars) when you have a domain.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
   title: {
     default: "Stellar Associates | Development Consultancy",
