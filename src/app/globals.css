@@ -9,6 +9,9 @@
    ============================================================ */
 
 @theme inline {
+  /* Override lg breakpoint so mobile Desktop Mode (980px) triggers desktop layouts */
+  --breakpoint-lg: 960px;
+
   /* shadcn/ui required vars */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
