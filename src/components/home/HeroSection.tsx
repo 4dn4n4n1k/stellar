@@ -21,10 +21,10 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: "linear-gradient(105deg, rgba(5,15,35,0.70) 0%, rgba(5,15,35,0.50) 55%, rgba(5,15,35,0.10) 100%)",
+          background: "linear-gradient(105deg, rgba(5,15,35,0.55) 0%, rgba(5,15,35,0.35) 55%, rgba(5,15,35,0.0) 100%)",
         }}
       />
-      <div className="absolute inset-0 z-[1] hidden md:block bg-black/10" />
+      {/* Removing extra desktop overlay to keep it bright */}
 
       {/* Desktop / Tablet Hero Content */}
       <div className="relative z-10 hidden md:block max-w-[680px] lg:max-w-[900px] mx-auto px-4 text-center md:mt-4">
