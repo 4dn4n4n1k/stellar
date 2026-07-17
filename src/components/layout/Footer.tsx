@@ -26,9 +26,9 @@ export default function Footer() {
       <footer className="hidden md:block bg-navy-950 text-white border-t border-white/5">
       {/* Main Footer */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-3">
+          <div className="w-full lg:w-3/12">
             <Link href="/" className="flex items-center gap-4 mb-6 group">
               <Image
                 src="/logo.webp"
@@ -108,7 +108,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links Column */}
-          <div className="lg:col-span-2">
+          <div className="w-full lg:w-2/12">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-1.5 h-5 rounded-full bg-red-600 block shrink-0" />
               <h3 className="text-white font-bold text-lg font-heading">
@@ -133,7 +133,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Us Column */}
-          <div className="lg:col-span-4">
+          <div className="w-full lg:w-4/12">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-1.5 h-5 rounded-full bg-[#fce057] block shrink-0" />
               <h3 className="text-white font-bold text-lg font-heading">
@@ -200,7 +200,7 @@ export default function Footer() {
           </div>
 
           {/* Our Services Column */}
-          <div className="lg:col-span-3">
+          <div className="w-full lg:w-3/12">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-1.5 h-5 rounded-full bg-teal-400 block shrink-0" />
               <h3 className="text-white font-bold text-lg font-heading">
