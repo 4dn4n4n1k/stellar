@@ -8,11 +8,6 @@
    Stellar Associates — Design System
    ============================================================ */
 
-@theme {
-  /* Override lg breakpoint so mobile Desktop Mode (980px) triggers desktop layouts */
-  --breakpoint-lg: 960px;
-}
-
 @theme inline {
 
   /* shadcn/ui required vars */
