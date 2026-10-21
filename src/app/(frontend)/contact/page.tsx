@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -15,8 +15,11 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
+    honeypot: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
@@ -31,11 +34,37 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      // Placeholder — no actual backend
+    setServerError(null);
+
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact-submissions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        const errorMessage =
+          errorData?.errors?.[0]?.message ||
+          "Failed to submit your message. Please try again or reach out directly via email.";
+        setServerError(errorMessage);
+        return;
+      }
+
       setSubmitted(true);
+    } catch {
+      setServerError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -45,6 +74,9 @@ export default function ContactPage() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: "" });
+    }
+    if (serverError) {
+      setServerError(null);
     }
   };
 
@@ -108,11 +140,13 @@ export default function ContactPage() {
                     <Button
                       onClick={() => {
                         setSubmitted(false);
+                        setServerError(null);
                         setFormState({
                           name: "",
                           email: "",
                           subject: "",
                           message: "",
+                          honeypot: "",
                         });
                       }}
                       className="mt-6 w-full sm:w-auto h-12 lg:h-8 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded-[6px] focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:outline-none"
@@ -125,6 +159,26 @@ export default function ContactPage() {
                     <h2 className="heading-section text-2xl text-gray-900 font-extrabold mb-6 font-heading">
                       Send Us a Message
                     </h2>
+
+                    {serverError && (
+                      <div className="p-4 rounded-[6px] bg-red-50 border border-red-200 text-status-error text-sm">
+                        {serverError}
+                      </div>
+                    )}
+
+                    {/* Honeypot field for anti-spam bots */}
+                    <div className="hidden" aria-hidden="true">
+                      <label htmlFor="website-hp">Leave this field blank</label>
+                      <input
+                        id="website-hp"
+                        name="honeypot"
+                        type="text"
+                        value={formState.honeypot}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
@@ -213,10 +267,20 @@ export default function ContactPage() {
                     <div className="flex justify-center">
                       <Button
                         type="submit"
-                        className="w-full sm:w-auto h-12 px-10 text-sm font-semibold rounded-[12px] bg-[#156E67] hover:bg-[#1C857D] text-white shadow-[0_4px_14px_rgba(21,110,103,0.15)] hover:shadow-[0_6px_20px_rgba(21,110,103,0.25)] hover:translate-y-[-2px] transition-all duration-[250ms] ease-in-out font-heading"
+                        disabled={isSubmitting}
+                        className="w-full sm:w-auto h-12 px-10 text-sm font-semibold rounded-[12px] bg-[#156E67] hover:bg-[#1C857D] text-white shadow-[0_4px_14px_rgba(21,110,103,0.15)] hover:shadow-[0_6px_20px_rgba(21,110,103,0.25)] hover:translate-y-[-2px] transition-all duration-[250ms] ease-in-out font-heading disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                       >
-                        <Send className="mr-2" size={16} strokeWidth={2} />
-                        Send Message
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2" size={16} strokeWidth={2} />
+                            Send Message
+                          </>
+                        )}
                       </Button>
                     </div>
                   </form>

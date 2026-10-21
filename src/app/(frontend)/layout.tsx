@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import "./globals.css";
+import "@/app/globals.css";
 
 const inter = Inter({
   variable: "--font-sans",
