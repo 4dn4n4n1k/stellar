@@ -83,7 +83,7 @@ export default function ContactPage() {
   return (
     <div className="page-enter">
       {/* Hero Banner */}
-      <section className="bg-navy-950 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+      <section className="bg-navy-950 pt-24 pb-14 md:pt-28 md:pb-18 relative overflow-hidden">
         {/* Brand Pattern Background */}
         <svg
           className="absolute -top-20 -right-20 w-[40%] h-[60%] opacity-15 pointer-events-none"
