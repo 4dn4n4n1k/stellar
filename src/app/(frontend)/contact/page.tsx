@@ -96,15 +96,9 @@ export default function ContactPage() {
         </svg>
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p 
-            className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3 animate-fade-slide-up"
-            style={{ animationDelay: '100ms' }}
-          >
-            Get In Touch
-          </p>
           <h1 
             className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading animate-fade-slide-up"
-            style={{ animationDelay: '250ms' }}
+            style={{ animationDelay: '100ms' }}
           >
             Contact Us
           </h1>

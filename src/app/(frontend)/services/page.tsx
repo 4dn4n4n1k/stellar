@@ -495,15 +495,9 @@ export default function ServicesPage() {
       <section className="bg-navy-950 pt-28 pb-14 md:pt-32 md:pb-18 relative overflow-hidden">
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <p 
-            className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-4 animate-fade-slide-up font-heading"
-            style={{ animationDelay: '100ms' }}
-          >
-            What We Do
-          </p>
           <h1 
             className="heading-display text-4xl md:text-5xl lg:text-7xl text-white font-extrabold mb-6 font-heading animate-fade-slide-up leading-tight"
-            style={{ animationDelay: '250ms' }}
+            style={{ animationDelay: '100ms' }}
           >
             Our Capabilities
           </h1>

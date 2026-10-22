@@ -30,15 +30,9 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             <div className="lg:col-span-8 text-left">
-              <p 
-                className="text-[#fce057] font-bold text-xs uppercase tracking-[0.2em] mb-4 animate-fade-slide-up font-heading"
-                style={{ animationDelay: '100ms' }}
-              >
-                About Us
-              </p>
               <h1 
                 className="heading-display text-4xl md:text-5xl lg:text-7xl text-white font-extrabold mb-6 tracking-tight leading-tight animate-fade-slide-up"
-                style={{ animationDelay: '250ms' }}
+                style={{ animationDelay: '100ms' }}
               >
                 Our Story
               </h1>
