@@ -39,17 +39,22 @@ next-env.d.ts
 # Maintenance, cleanup & migration scripts (prevent credential leaks)
 /scripts/
 *.cjs.bak
+*.bak
+*.backup
 
 # Uploads & local media assets
-/public/media
-/public/uploads
-/media
-/uploads
+/public/media/*
+!/public/media/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
+/media/*
+/uploads/*
 
 # Temporary, scratch and cache directories
 /scratch/
 /tmp/
 /temp/
+.gemini/
 
 # Debug and runtime logs
 logs
@@ -67,6 +72,8 @@ yarn-error.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
 # IDE and editor settings
 .idea/
