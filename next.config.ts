@@ -17,27 +17,9 @@ const nextConfig: NextConfig = {
 
   // Long-lived cache headers for static assets + security headers for HTML
   async headers() {
-    return [
-      {
-        // Immutable cache for all /_next/static assets (JS, CSS, fonts, images)
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        // Cache WebP hero images and logo for 30 days
-        source: "/:file(hero-.*\\.webp|logo\\.webp)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=2592000, stale-while-revalidate=86400",
-          },
-        ],
-      },
+    const isProd = process.env.NODE_ENV === "production";
+
+    const headersList = [
       {
         // Security + performance headers for all HTML pages
         source: "/(.*)",
@@ -52,6 +34,33 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+
+    if (isProd) {
+      headersList.push(
+        {
+          // Immutable cache for all /_next/static assets (JS, CSS, fonts, images) in production
+          source: "/_next/static/:path*",
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "public, max-age=31536000, immutable",
+            },
+          ],
+        },
+        {
+          // Cache WebP hero images and logo for 30 days in production
+          source: "/:file(hero-.*\\.webp|logo\\.webp)",
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "public, max-age=2592000, stale-while-revalidate=86400",
+            },
+          ],
+        }
+      );
+    }
+
+    return headersList;
   },
 };
 

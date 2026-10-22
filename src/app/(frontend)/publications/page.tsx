@@ -1,24 +1,81 @@
-"use client";
+import { getPayload } from 'payload';
+import configPromise from '@/payload.config';
+import PublicationsClient, {
+  FormattedPublication,
+} from '@/components/publications/PublicationsClient';
+import { publications as staticFallback } from '@/lib/data';
 
-import { useState } from "react";
-import { publications } from "@/lib/data";
-import ScrollReveal from "@/components/ScrollReveal";
-import SectionHeading from "@/components/SectionHeading";
-import { Badge } from "@/components/ui/badge";
-import { Download, Calendar, FileText } from "lucide-react";
+// Revalidate page cache every 60 seconds (ISR)
+export const revalidate = 60;
 
-const categories = [
-  "All",
-  ...Array.from(new Set(publications.map((p) => p.category))),
-];
+function formatPublicationDate(dateStr?: string | null): string {
+  if (!dateStr) return '';
+  if (/^\d{4}$/.test(dateStr)) return dateStr;
+  try {
+    const d = new Date(dateStr);
+    if (!isNaN(d.getTime())) {
+      return d.getFullYear().toString();
+    }
+  } catch {
+    // fallback
+  }
+  return dateStr;
+}
 
-export default function PublicationsPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+export default async function PublicationsPage() {
+  let publications: FormattedPublication[] = [];
 
-  const filtered =
-    activeCategory === "All"
-      ? publications
-      : publications.filter((p) => p.category === activeCategory);
+  try {
+    const payload = await getPayload({ config: configPromise });
+    const { docs } = await payload.find({
+      collection: 'publications',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+      depth: 1,
+      sort: '-publicationDate',
+      limit: 100,
+    });
+
+    publications = docs.map((doc) => {
+      const docMedia =
+        doc.document && typeof doc.document === 'object'
+          ? (doc.document as { url?: string; filename?: string })
+          : null;
+
+      return {
+        id: doc.id,
+        title: doc.title,
+        description: doc.description,
+        category: doc.category,
+        date: formatPublicationDate(doc.publicationDate),
+        documentUrl: docMedia?.url || null,
+        documentFilename: docMedia?.filename || null,
+      };
+    });
+  } catch (error) {
+    // Graceful error logging on server; never leak database or secret details to client
+    console.error('Failed to load published publications from Payload:', error);
+  }
+
+  // Explicit development fallback only if enabled via environment flag
+  const isDevFallback =
+    process.env.NODE_ENV === 'development' &&
+    process.env.ENABLE_DEV_FALLBACK === 'true' &&
+    publications.length === 0;
+
+  const displayPublications: FormattedPublication[] = isDevFallback
+    ? staticFallback.map((p, idx) => ({
+        id: `static-${idx}`,
+        title: p.title,
+        description: p.description,
+        category: p.category,
+        date: p.date,
+        documentUrl: null,
+      }))
+    : publications;
 
   return (
     <div className="page-enter">
@@ -36,19 +93,19 @@ export default function PublicationsPage() {
         </svg>
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <p 
+          <p
             className="text-teal-100 font-bold text-xs uppercase tracking-[0.15em] mb-3 animate-fade-slide-up"
             style={{ animationDelay: '100ms' }}
           >
             Knowledge Hub
           </p>
-          <h1 
+          <h1
             className="heading-display text-4xl md:text-5xl lg:text-6xl text-white font-extrabold mb-6 font-heading animate-fade-slide-up"
             style={{ animationDelay: '250ms' }}
           >
             Publications
           </h1>
-          <p 
+          <p
             className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto animate-fade-slide-up"
             style={{ animationDelay: '400ms' }}
           >
@@ -61,65 +118,7 @@ export default function PublicationsPage() {
       {/* Publications */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Tabs */}
-          <ScrollReveal>
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`h-12 md:h-auto md:py-2 px-4 rounded-[6px] text-sm font-semibold transition-colors duration-180 border flex items-center justify-center ${
-                    activeCategory === cat
-                      ? "bg-navy-900 text-white border-navy-900 shadow-sm"
-                      : "bg-gray-50 text-gray-900 border-gray-200 hover:bg-gray-100"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* Publication Cards */}
-          <div className="space-y-4 max-w-4xl mx-auto">
-            {filtered.map((pub, i) => (
-              <ScrollReveal key={i} delay={i * 50}>
-                <div className="pub-card bg-gray-25 border border-gray-200 rounded-[10px] p-6 flex flex-col md:flex-row md:items-center gap-4 hover:bg-gray-50 transition-colors duration-180 shadow-xs">
-                  <div className="w-12 h-12 rounded-[6px] bg-navy-900/5 border border-gray-200 flex items-center justify-center shrink-0">
-                    <FileText className="text-navy-900/40" size={22} strokeWidth={1.5} />
-                  </div>
-
-                  <div className="flex-1">
-                    <h3 className="text-navy-900 font-bold text-base mb-1 font-heading">
-                      {pub.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {pub.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-3 md:shrink-0">
-                    <Badge
-                       variant="secondary"
-                      className="bg-teal-700/10 text-teal-700 border border-teal-700/20 text-xs shadow-none hover:bg-teal-700/15 font-semibold"
-                    >
-                      {pub.category}
-                    </Badge>
-                    <span className="flex items-center gap-1.5 text-gray-600 text-xs font-medium">
-                      <Calendar size={12} strokeWidth={1.5} />
-                      {pub.date}
-                    </span>
-                    <button
-                      className="w-12 h-12 md:w-8 md:h-8 rounded-[6px] bg-navy-900/5 hover:bg-navy-900 hover:text-white text-navy-900/50 flex items-center justify-center transition-colors duration-180 focus-visible:ring-2 focus-visible:ring-[#156E67] focus-visible:outline-none"
-                      title="Download (placeholder)"
-                    >
-                      <Download className="w-[16px] h-[16px] md:w-[14px] md:h-[14px]" strokeWidth={1.5} />
-                    </button>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <PublicationsClient publications={displayPublications} />
 
           <div className="text-center mt-12 text-gray-600 text-sm italic">
             Publications library will be expanded as new research is completed.

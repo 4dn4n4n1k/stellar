@@ -5,6 +5,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { Users } from './collections/Users';
 import { ContactSubmissions } from './collections/ContactSubmissions';
+import { Media } from './collections/Media';
+import { Publications } from './collections/Publications';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,7 +22,7 @@ export default buildConfig({
       actions: ['@/components/admin/AdminLogout#AdminLogout'],
     },
   },
-  collections: [Users, ContactSubmissions],
+  collections: [Users, ContactSubmissions, Media, Publications],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'temp-secret-key-at-least-thirty-two-chars-long',
   typescript: {

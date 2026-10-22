@@ -339,57 +339,6 @@ export const associateExperts = [
   { title: "Data Analyst", expertise: "Data Analysis & Visualization" },
 ];
 
-export const portfolioProjects = [
-  {
-    title: "Project Title Placeholder",
-    sector: "Governance & Democracy",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-  {
-    title: "Project Title Placeholder",
-    sector: "Labor & Compliance",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-  {
-    title: "Project Title Placeholder",
-    sector: "Research & Assessments",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-  {
-    title: "Project Title Placeholder",
-    sector: "Governance & Democracy",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-  {
-    title: "Project Title Placeholder",
-    sector: "Labor & Compliance",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-  {
-    title: "Project Title Placeholder",
-    sector: "Research & Assessments",
-    client: "Client Name",
-    year: "2026",
-    description:
-      "Brief project description highlighting scope, methodology, and key outcomes delivered.",
-  },
-];
-
 export const publications = [
   {
     title: "Democratic Governance in Bangladesh: Trends and Prospects",
