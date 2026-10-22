@@ -11,22 +11,45 @@
 # Testing
 /coverage
 
-# Next.js and build outputs
+# Next.js, Turbopack and build outputs
 /.next/
 /out/
 /build
 /dist
+/.turbo
 
 # TypeScript cache & generated files
 *.tsbuildinfo
+tsconfig.tsbuildinfo
 next-env.d.ts
 
 # Environment variables & secrets
+.env
+.env*.local
 .env*
 !.env.example
 
+# Database dumps, exports & local databases
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# Maintenance, cleanup & migration scripts (prevent credential leaks)
+/scripts/
+*.cjs.bak
+
 # Uploads & local media assets
 /public/media
+/public/uploads
+/media
+/uploads
+
+# Temporary, scratch and cache directories
+/scratch/
+/tmp/
+/temp/
 
 # Debug and runtime logs
 logs
@@ -55,7 +78,7 @@ Thumbs.db
 *.swp
 *.swo
 
-# Vercel
+# Vercel & cloud deployment
 .vercel
 
 # Certificates and security keys
