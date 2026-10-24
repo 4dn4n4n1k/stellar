@@ -9,6 +9,7 @@ import { Media } from './collections/Media';
 import { Publications } from './collections/Publications';
 import { TeamMembers } from './collections/TeamMembers';
 import { AssociateExperts } from './collections/AssociateExperts';
+import { JobOpenings } from './collections/JobOpenings';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -24,7 +25,7 @@ export default buildConfig({
       actions: ['@/components/admin/AdminLogout#AdminLogout'],
     },
   },
-  collections: [Users, ContactSubmissions, Media, Publications, TeamMembers, AssociateExperts],
+  collections: [Users, ContactSubmissions, Media, Publications, TeamMembers, AssociateExperts, JobOpenings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'temp-secret-key-at-least-thirty-two-chars-long',
   typescript: {

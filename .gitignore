@@ -8,8 +8,12 @@
 !.yarn/releases
 !.yarn/versions
 
-# Testing
+# Testing & Test Reports
 /coverage
+/test-results/
+/playwright-report/
+/blob-report/
+.playwright/
 
 # Next.js, Turbopack and build outputs
 /.next/
@@ -28,6 +32,7 @@ next-env.d.ts
 .env*.local
 .env*
 !.env.example
+.npmrc
 
 # Database dumps, exports & local databases
 *.sql
@@ -50,11 +55,15 @@ next-env.d.ts
 /media/*
 /uploads/*
 
-# Temporary, scratch and cache directories
+# Temporary, scratch, cache & AI agent directories
 /scratch/
 /tmp/
 /temp/
 .gemini/
+.agents/
+.claude/
+.cursor/
+.antigravity/
 
 # Debug and runtime logs
 logs
@@ -62,6 +71,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 .pnpm-debug.log*
 
 # OS system files
