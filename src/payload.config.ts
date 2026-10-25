@@ -14,6 +14,14 @@ import { JobOpenings } from './collections/JobOpenings';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+const payloadSecret = process.env.PAYLOAD_SECRET;
+
+if (!payloadSecret || payloadSecret.length < 32) {
+  throw new Error(
+    'PAYLOAD_SECRET must be configured and contain at least 32 characters.'
+  );
+}
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -27,7 +35,7 @@ export default buildConfig({
   },
   collections: [Users, ContactSubmissions, Media, Publications, TeamMembers, AssociateExperts, JobOpenings],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || 'temp-secret-key-at-least-thirty-two-chars-long',
+  secret: payloadSecret,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
