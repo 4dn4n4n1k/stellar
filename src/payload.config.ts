@@ -1,6 +1,7 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { s3Storage } from '@payloadcms/storage-s3';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -76,6 +77,54 @@ function getDatabaseSSL() {
   };
 }
 
+function getR2StoragePlugin() {
+  const r2Bucket = process.env.R2_BUCKET;
+  if (!r2Bucket) {
+    return null;
+  }
+
+  const r2Endpoint = process.env.R2_ENDPOINT;
+  const r2AccessKeyId = process.env.R2_ACCESS_KEY_ID;
+  const r2SecretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+
+  if (!r2Endpoint) {
+    throw new Error('R2_ENDPOINT must be configured when R2 storage (R2_BUCKET) is enabled.');
+  }
+
+  if (!r2AccessKeyId || !r2SecretAccessKey) {
+    throw new Error(
+      'R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY must be configured when R2 storage (R2_BUCKET) is enabled.'
+    );
+  }
+
+  return s3Storage({
+    collections: {
+      media: {
+        disablePayloadAccessControl: true,
+        generateFileURL: ({ filename, prefix }) => {
+          const cleanPrefix = prefix ? prefix.replace(/^\/+|\/+$/g, '') : '';
+          const key = cleanPrefix ? `${cleanPrefix}/${filename}` : filename;
+          const publicUrl = (process.env.R2_PUBLIC_URL || '').replace(/\/+$/, '');
+          return publicUrl ? `${publicUrl}/${key}` : `/${key}`;
+        },
+      },
+    },
+    bucket: r2Bucket,
+    config: {
+      credentials: {
+        accessKeyId: r2AccessKeyId,
+        secretAccessKey: r2SecretAccessKey,
+      },
+      region: 'auto',
+      endpoint: r2Endpoint,
+      forcePathStyle: true,
+    },
+    ...(process.env.R2_CLIENT_UPLOADS === 'true' ? { clientUploads: true } : {}),
+  });
+}
+
+const r2Plugin = getR2StoragePlugin();
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -99,4 +148,8 @@ export default buildConfig({
       ssl: getDatabaseSSL(),
     },
   }),
+  plugins: [
+    ...(r2Plugin ? [r2Plugin] : []),
+  ],
 });
+
