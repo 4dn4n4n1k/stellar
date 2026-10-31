@@ -43,6 +43,9 @@ next-env.d.ts
 
 # Maintenance, cleanup & migration scripts (prevent credential leaks)
 /scripts/
+!/scripts/
+/scripts/*
+!/scripts/run-staging-migration.mjs
 *.cjs.bak
 *.bak
 *.backup
@@ -107,3 +110,6 @@ $RECYCLE.BIN/
 certs/
 tls-remediation-validation-report.md
 cms-implementation-baseline.md
+
+.vercel
+.env*
